@@ -12,6 +12,6 @@ This repo showcases my work, projects, and skills as a full-stack developer.
 - Frameworks: React | Node.js | Express | Django
 - Tools: GitHub | VS Code | Figma | Docker
 </br>
-📫 Let’s connect: <a href="https://www.linkedin.com/in/affa-saleem-23ba2b276">LinkedIn</a> | <a href="https://affasaleem.github.io/my-portfolio/HTML-Portfolio/index.html">Portfolio </a> | <a href="fathimaffa6@gmail.com">Email</a>
-
+📫 Let’s connect: <a href="https://www.linkedin.com/in/affa-saleem-23ba2b276">LinkedIn</a> | <a href="https://affasaleem.github.io/my-portfolio/HTML-Portfolio/index.html"> Basic Portfolio </a> | <a href="fathimaffa6@gmail.com">Email</a> 
+</br></br>
 <i>✨ Thank you for visiting my portfolio repository!</i>
