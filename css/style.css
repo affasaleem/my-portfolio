@@ -1283,6 +1283,8 @@ body {
     .project-buttons {
         flex-direction: column;
     }
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -2568,5 +2570,5 @@ body {
     .project-buttons {
         flex-direction: column;
     }
->>>>>>> 992c8a27c15d1f772c3306f7c3be5c6c428f8082
+    
 }
