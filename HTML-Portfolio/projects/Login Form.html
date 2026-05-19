@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tag</title>
+</head>
+<body>
+    <h1 align="center">Marstech Login Form</h1>
+     
+    <form method="post" action="" enctype="multipart/form-data"> 
+        <!-- field start -->
+            <fieldset>
+                <legend><h2>Login Information</h2></legend>
+                <p>
+                <label for="Name">Name:</label> 
+                <input type="text" name="name" size="40" id="Name">
+            </p>
+            <p>
+                <label for="Email">Email:</label>
+                <input type="text" name="email" size="40" id="Email">
+            </p>
+            </fieldset>
+            <br>
+
+        
+            <fieldset>
+                <legend><h2>Personal Information</h2></legend>
+                <p>
+                <label for="Address">Address: </label> <br>
+                <textarea name="Address" id="Address" cols="40" rows="5" maxlength="100"></textarea>
+            </p>
+            <p>
+                <label for=""> Date of Birth: </label> <br>
+                <input type="date" name="DOB">
+            </p>
+            <p>
+                Gender: <br>
+                <input type="radio" name="gender" value="male" id="male"><label for="male">male</label>
+                <input type="radio" name="gender" value="female" id="female"><label for="female">female</label>
+
+            </p>
+            </fieldset>
+            <br>
+        
+            <fieldset>
+                <legend><h2>Educational Information</h2></legend>
+                <p>
+                <label for=""> Courses: </label> <br>
+                <input type="checkbox" name="courses[]" value="Software-Engneering" id="Software-Engneering"><label for="Software-Engneering">Software-Engneering</label>
+                <input type="checkbox" name="courses[]" value="Web-Development" id="Web-Development"><label for="Web-Development">Web-Development</label>
+                <input type="checkbox" name="courses[]" value="Network-Engineering" id="Network-Engineering"><label for="Network-Engineering">Network-Engineering</label>
+            </p>
+
+            <p>
+                <label for=""> Catagaries: </label> <br>
+                <select name="Catagaries[]" multiple>
+                    <option value="Software-Engneering" id="Software-Engneering"><label for="Software-Engneering">Software-Engneering</label></option>
+                    <option value="Network-Engneering">Network-Engneering</option>
+                    <option value="Web-Development">Web-Development</option>
+                    <option value="Software-Engneering">Software-Engneering</option>
+                    <option value="Network-Engneering">Network-Engneering</option>
+                    <option value="Web-Development">Web-Development</option>
+                    <option value="Software-Engneering">Software-Engneering</option>
+                    <option value="Network-Engneering">Network-Engneering</option>
+                    <option value="Web-Development">Web-Development</option>
+                    <option value="Software-Engneering">Software-Engneering</option>
+                </select>
+            </p>
+            
+            <p>
+                <label for=""> Certificate: </label> <br>
+                <input type="file" name="certificate" >
+            </p>
+
+            </fieldset>
+
+
+            <br><br><br>
+                
+                <input type="submit" name="submit" value="submit">
+                
+
+
+    </form>
+</body>
+</html>
