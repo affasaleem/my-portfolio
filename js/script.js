@@ -77,3 +77,27 @@ ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
 
 
+// ================= CONTACT FORM SUCCESS =================
+
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+if(contactForm){
+
+    contactForm.addEventListener('submit', (e) => {
+
+        e.preventDefault();
+
+        successMessage.style.display = 'block';
+
+        contactForm.reset();
+
+        setTimeout(() => {
+
+            successMessage.style.display = 'none';
+
+        }, 3000);
+
+    });
+
+}
