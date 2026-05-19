@@ -1,0 +1,239 @@
+/* ================= HERO ================= */
+
+.edu-hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 5rem;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
+
+/* ================= GLASS ================= */
+
+.glass-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2rem;
+    transition: .4s ease;
+    box-shadow: 0 .5rem 2rem var(--shadow-color);
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: var(--main-color);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem 4rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 3rem;
+    right: -2rem;
+    width: 5rem;
+    height: 5rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -2rem;
+}
+
+.timeline-icon i {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.timeline-content {
+    padding: 3rem;
+}
+
+.timeline-content h3 {
+    font-size: 2.2rem;
+}
+
+.timeline-content span {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+/* ================= CERTIFICATES ================= */
+
+.certificate-container,
+.achievement-container,
+.training-container,
+.preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.certificate-card img,
+.preview-card img {
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.certificate-content,
+.preview-content {
+    padding: 2rem;
+}
+
+.certificate-content h3,
+.preview-content h3,
+.training-card h3,
+.achievement-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.certificate-content p,
+.preview-content p,
+.training-card p,
+.achievement-card p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.certificate-content span,
+.training-card span {
+    display: block;
+    margin: 1rem 0;
+    color: var(--main-color);
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement-card {
+    padding: 3rem;
+    text-align: center;
+}
+
+.achievement-card i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+/* ================= TRAINING ================= */
+
+.training-card {
+    padding: 3rem;
+}
+
+/* ================= PROJECTS ================= */
+
+.preview-card {
+    overflow: hidden;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.tech-tags span {
+    background: rgba(117,78,249,.15);
+    color: var(--main-color);
+    padding: .7rem 1.4rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+}
+
+.preview-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .timeline::before {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 7rem;
+        padding-right: 2rem;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-icon {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) .timeline-icon {
+        left: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .preview-buttons {
+        flex-direction: column;
+    }
+}
