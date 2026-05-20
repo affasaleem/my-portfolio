@@ -672,9 +672,9 @@ body {
     }
 
     /* skills section design */
-body {
-      font-family: 'Outfit', sans-serif;
-    }
+    body {
+        font-family: 'Outfit', sans-serif;
+        }
 
     .glass {
       background: rgba(255, 255, 255, 0.06);
@@ -1082,6 +1082,26 @@ body {
     width: 50%;
 }
 
+/* INPUT LAYOUT  */
+/* .horizontal-inputs {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.horizontal-inputs input {
+    width: 50%;
+}
+
+.vertical-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.vertical-inputs input {
+    width: 100%;
+} */
+
 .contact-form-wrapper input,
 .contact-form-wrapper textarea {
     width: 100%;
@@ -1136,7 +1156,18 @@ body {
     }
 }
 
+/* INPUT LAYOUT  MOBILE RESPONSIVE*/
 
+/* @media (max-width: 768px) {
+
+    .horizontal-inputs {
+        flex-direction: column;
+    }
+
+    .horizontal-inputs input {
+        width: 100%;
+    }
+} */
 
 
 
