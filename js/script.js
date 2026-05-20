@@ -104,92 +104,34 @@ if(contactForm){
 
 /* ================= CERTIFICATES SECTION ================= */
 
-/* FILTER  */
+// Certificate hover interaction (optional)
 
-const filterButtons = document.querySelectorAll('.filter-btn');
 const certificateCards = document.querySelectorAll('.certificate-card');
 
-filterButtons.forEach(button => {
+certificateCards.forEach(card => {
 
-    button.addEventListener('click', () => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
+    });
 
-        document
-            .querySelector('.filter-btn.active')
-            .classList.remove('active');
-
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-
-        certificateCards.forEach(card => {
-
-            if(filter === 'all' ||
-               card.dataset.category === filter){
-
-                card.style.display = 'block';
-
-            } else {
-
-                card.style.display = 'none';
-
-            }
-
-        });
-
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '';
     });
 
 });
 
-/* ================= SEARCH ================= */
+/* ================= Education SECTION ================= */
 
-const searchInput = document.getElementById('certificateSearch');
+// Education section animations (optional)
 
-searchInput.addEventListener('keyup', () => {
+const educationCards = document.querySelectorAll('.timeline-content');
 
-    const value = searchInput.value.toLowerCase();
-
-    certificateCards.forEach(card => {
-
-        const text = card.innerText.toLowerCase();
-
-        if(text.includes(value)){
-
-            card.style.display = 'block';
-
-        } else {
-
-            card.style.display = 'none';
-
-        }
-
+educationCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
     });
 
-});
-
-//  ================= EDUCATION SECTION ================= 
-
-/* ================= TIMELINE ANIMATION ================= */
-
-const timelineItems = document.querySelectorAll('.timeline-item');
-
-const timelineObserver = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add('show');
-
-        }
-
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '';
     });
-
-}, {
-    threshold: 0.2
-});
-
-timelineItems.forEach(item => {
-
-    timelineObserver.observe(item);
-
 });
