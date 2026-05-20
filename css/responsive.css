@@ -1,254 +1,173 @@
-/* =========================================================
-   MOBILE RESPONSIVE IMPROVEMENTS
-========================================================= */
-
-/* Prevent horizontal scroll */
-html,
-body {
-    overflow-x: hidden;
-    width: 100%;
-}
-
-/* Responsive images */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Better section spacing */
-section {
-    padding: 10rem 5% 4rem;
-}
-
-/* ================= LARGE TABLETS ================= */
-
-@media (max-width: 991px) {
-
-    html {
-        font-size: 55%;
-    }
-
-    /* Home Section */
-    .home {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 4rem;
-        padding-top: 14rem;
-    }
-
-    .home-content {
-        max-width: 100%;
-    }
-
-    .home-content h1 {
-        font-size: 5rem;
-        line-height: 1.2;
-    }
-
-    .home-content h3 {
-        font-size: 2.6rem;
-    }
-
-    .home-img img {
-        position: relative;
-        width: 60%;
-        top: 0;
-        right: 0;
-        margin: auto;
-        display: block;
-    }
-
-    /* About */
-    .about {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .about-content h2 {
-        text-align: center;
-    }
-
-    .about-img {
-        width: 80%;
-    }
-
-    /* Contact */
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Grid Sections */
-    .projects-container,
-    .skills-container,
-    .education-container {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-
-/* ================= MOBILE DEVICES ================= */
+/* ================= EDUCATION RESPONSIVE ================= */
 
 @media (max-width: 768px) {
 
-    html {
-        font-size: 52%;
+    .skills-container,
+    .education-container,
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 
-    /* Header */
-    .header {
-        padding: 1.5rem 5%;
-    }
-
-    /* Mobile Menu */
-    .navbar {
-        width: 100%;
-        padding: 2rem 5%;
-    }
-
-    .navbar a {
-        font-size: 1.8rem;
-        margin: 2rem 0;
-        display: block;
-    }
-
-    /* Home */
-    .home {
-        padding: 13rem 5% 5rem;
-    }
-
-    .home-content h1 {
-        font-size: 4.5rem;
-    }
-
-    .home-content h3 {
-        font-size: 2.2rem;
-    }
-
-    .home-content p {
-        font-size: 1.5rem;
-    }
-
-    /* Hide rotating profession animation */
-    .home .profession-container {
-        display: none;
-    }
-
-    /* Social Icons */
-    .home-content .social-media {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .home-content .social-media a {
-        margin: 1rem;
-    }
-
-    /* Headings */
-    .heading {
-        font-size: 3.5rem;
-    }
-
-    /* About */
-    .about-img img {
-        width: 90%;
-    }
-
-    /* Project Buttons */
     .project-buttons {
         flex-direction: column;
     }
 
-    .project-buttons a {
-        width: 100%;
-        text-align: center;
+}
+
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .about-section{
+        grid-template-columns:1fr;
+        text-align:center;
+        background:#e7e7e7;
     }
 
-    /* Contact Form */
-    .contact form .input-box {
-        flex-direction: column;
+    .about-content h1{
+        font-size:2.4rem;
     }
 
-    .contact form .input-box input {
-        width: 100%;
-    }
-
-    /* Footer */
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
+    .buttons{
+        justify-content:center;
     }
 }
 
-/* ================= SMALL MOBILE ================= */
+@media(max-width:768px){
 
-@media (max-width: 480px) {
-
-    html {
-        font-size: 50%;
+    .navbar{
+        padding:20px 5%;
     }
 
-    section {
-        padding: 10rem 4% 3rem;
+    .nav-links{
+        gap:15px;
+        font-size:14px;
     }
 
-    .home {
-        padding-top: 12rem;
+    .image-box{
+        width:280px;
+        height:360px;
     }
 
-    .home-content h1 {
-        font-size: 3.8rem;
+    .about-content h1{
+        font-size:2rem;
     }
 
-    .home-content h3 {
-        font-size: 2rem;
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+}
+
+
+
+body {
+      font-family: 'Outfit', sans-serif;
     }
 
-    .btn {
-        width: 100%;
-        text-align: center;
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .skills-container,
-    .projects-container,
-    .education-container {
+    .light .glass {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .gradient-text {
+        background: linear-gradient(to right, #8b5cf6, #c4b5fd);
+        background-clip: text;           /* Standard (modern browsers) */
+        -webkit-background-clip: text;   /* Fallback for older WebKit browsers */
+        -webkit-text-fill-color: transparent;
+        color: transparent;               /* Fallback for non-WebKit browsers */
+}
+
+    .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #8b5cf6;
+      transition: 0.3s;
+      margin-top: 4px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .skill-pill:hover {
+      transform: scale(1.05);
+    }
+
+    /* skills section design */
+    body {
+        font-family: 'Outfit', sans-serif;
+        }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .light .glass {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .gradient-text {
+        background: linear-gradient(to right, #8b5cf6, #c4b5fd);
+        background-clip: text;           /* Standard (modern browsers) */
+        -webkit-background-clip: text;   /* Fallback for older WebKit browsers */
+        -webkit-text-fill-color: transparent;
+        color: transparent;               /* Fallback for non-WebKit browsers */
+}
+
+    .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #8b5cf6;
+      transition: 0.3s;
+      margin-top: 4px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .skill-pill:hover {
+      transform: scale(1.05);
+    }
+
+
+    /* ================= CONTACT INFO  RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+    .contact-container {
         grid-template-columns: 1fr;
     }
-
-    .project-card,
-    .skill-card,
-    .education-card {
-        padding: 2rem;
-    }
-
-    .contact-form-wrapper {
-        padding: 2rem;
-    }
 }
 
-/* ================= EXTRA SMALL DEVICES ================= */
+@media (max-width: 768px) {
 
-@media (max-width: 360px) {
-
-    html {
-        font-size: 47%;
-    }
-
-    .logo {
-        font-size: 2rem;
-    }
-
-    .heading {
-        font-size: 3rem;
-    }
-
-    .home-content h1 {
-        font-size: 3.2rem;
-    }
-
-    .home-content p {
-        font-size: 1.4rem;
+    .contact-form-wrapper .input-box {
+        flex-direction: column;
     }
 }
