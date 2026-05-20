@@ -101,3 +101,95 @@ if(contactForm){
     });
 
 }
+
+/* ================= CERTIFICATES SECTION ================= */
+
+/* FILTER  */
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const certificateCards = document.querySelectorAll('.certificate-card');
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        document
+            .querySelector('.filter-btn.active')
+            .classList.remove('active');
+
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        certificateCards.forEach(card => {
+
+            if(filter === 'all' ||
+               card.dataset.category === filter){
+
+                card.style.display = 'block';
+
+            } else {
+
+                card.style.display = 'none';
+
+            }
+
+        });
+
+    });
+
+});
+
+/* ================= SEARCH ================= */
+
+const searchInput = document.getElementById('certificateSearch');
+
+searchInput.addEventListener('keyup', () => {
+
+    const value = searchInput.value.toLowerCase();
+
+    certificateCards.forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+
+        if(text.includes(value)){
+
+            card.style.display = 'block';
+
+        } else {
+
+            card.style.display = 'none';
+
+        }
+
+    });
+
+});
+
+//  ================= EDUCATION SECTION ================= 
+
+/* ================= TIMELINE ANIMATION ================= */
+
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+const timelineObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+timelineItems.forEach(item => {
+
+    timelineObserver.observe(item);
+
+});
