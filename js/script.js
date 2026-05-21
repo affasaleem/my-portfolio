@@ -77,6 +77,170 @@ ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
 
 
+
+
+// =========================================================
+// SKILLS ANIMATION
+// =========================================================
+
+const skillSection = document.querySelector('.skills');
+
+const progressBars = document.querySelectorAll('.skill-progress-bar');
+
+const skillNumbers = document.querySelectorAll('.skill-number');
+
+let started = false;
+
+function startSkillAnimation() {
+
+    if (started) return;
+
+    const sectionTop = skillSection.getBoundingClientRect().top;
+
+    if (sectionTop < window.innerHeight - 100) {
+
+        // Animate Progress Bars
+        progressBars.forEach((bar) => {
+
+            const width = bar.getAttribute('data-width');
+
+            bar.style.width = width;
+        });
+
+        // Animate Numbers
+        skillNumbers.forEach((number) => {
+
+            const target = +number.getAttribute('data-target');
+
+            let count = 0;
+
+            const speed = target / 50;
+
+            function updateCounter() {
+
+                count += speed;
+
+                if (count < target) {
+
+                    number.innerText = `${Math.ceil(count)}%`;
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    number.innerText = `${target}%`;
+                }
+            }
+
+            updateCounter();
+        });
+
+        started = true;
+    }
+}
+
+// Scroll Animation
+window.addEventListener('scroll', startSkillAnimation);
+
+// Load Animation
+window.addEventListener('load', startSkillAnimation);
+
+
+
+
+
+// ================= CERTIFICATE MODAL =================
+
+const certificateCards = document.querySelectorAll('.certificate-card');
+
+const certificateModal = document.getElementById('certificateModal');
+
+const modalImage = document.getElementById('modalCertificateImage');
+const modalTitle = document.getElementById('modalCertificateTitle');
+const modalOrg = document.getElementById('modalCertificateOrg');
+const modalYear = document.getElementById('modalCertificateYear');
+const modalDescription = document.getElementById('modalCertificateDescription');
+
+const closeCertificateModal = document.querySelector('.certificate-close-btn');
+
+// ================= OPEN MODAL =================
+
+certificateCards.forEach(card => {
+
+    card.addEventListener('click', () => {
+
+        const image = card.dataset.image;
+        const title = card.dataset.title;
+        const org = card.dataset.org;
+        const year = card.dataset.year;
+        const description = card.dataset.description;
+
+        modalImage.src = image;
+        modalTitle.textContent = title;
+        modalOrg.textContent = org;
+        modalYear.textContent = year;
+        modalDescription.textContent = description;
+
+        certificateModal.classList.add('active');
+
+        document.body.style.overflow = 'hidden';
+    });
+
+});
+
+// ================= CLOSE MODAL =================
+
+closeCertificateModal.addEventListener('click', () => {
+
+    certificateModal.classList.remove('active');
+
+    document.body.style.overflow = 'auto';
+
+});
+
+// ================= CLICK OUTSIDE =================
+
+certificateModal.addEventListener('click', (e) => {
+
+    if (e.target === certificateModal) {
+
+        certificateModal.classList.remove('active');
+
+        document.body.style.overflow = 'auto';
+    }
+
+});
+
+// ================= ESC KEY =================
+
+document.addEventListener('keydown', (e) => {
+
+    if (e.key === 'Escape') {
+
+        certificateModal.classList.remove('active');
+
+        document.body.style.overflow = 'auto';
+    }
+
+});
+
+
+/* ================= Education SECTION ================= */
+
+// Education section animations (optional)
+
+const educationCards = document.querySelectorAll('.timeline-content');
+
+educationCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = '';
+    });
+});
+
 // ================= CONTACT FORM SUCCESS =================
 
 const contactForm = document.getElementById('contactForm');
@@ -101,37 +265,3 @@ if(contactForm){
     });
 
 }
-
-/* ================= CERTIFICATES SECTION ================= */
-
-// Certificate hover interaction (optional)
-
-const certificateCards = document.querySelectorAll('.certificate-card');
-
-certificateCards.forEach(card => {
-
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '';
-    });
-
-});
-
-/* ================= Education SECTION ================= */
-
-// Education section animations (optional)
-
-const educationCards = document.querySelectorAll('.timeline-content');
-
-educationCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '';
-    });
-});
