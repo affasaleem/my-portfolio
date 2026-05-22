@@ -3,7 +3,7 @@
 
 
 
-# 🌐 Personal Portfolio Website
+# 🌐 My Portfolio Website
 
 Welcome to my personal portfolio website repository.  
 This portfolio represents my journey as an aspiring Software Developer and IT undergraduate passionate about modern technologies, creative UI/UX design, and real-world software solutions.
@@ -149,7 +149,7 @@ If you have any questions, suggestions, or feedback, feel free to contact me.
 ## 📧 Contact Information
 
 - Email: affasaleem.it@gmail.com
-- LinkedIn: in/affasaleem
+- LinkedIn: https://lk.linkedin.com/in/affasaleem
 - GitHub: https://github.com/affasaleem
 
 ---
@@ -185,5 +185,5 @@ Special thanks to:
 
 # 👨‍💻 Developed By
 
-**Affs Saleem**  
+**Affa Saleem**  
 Aspiring Software Developer | IT Undergraduate | Tech Enthusiast
