@@ -13,9 +13,8 @@ The website showcases my:
 - Projects
 - Certifications
 - Education Timeline
-<!-- - Training Experience -->
 - Contact Information
-
+<!-- - Training Experience -->
 ---
 
 # 🚀 About Me
