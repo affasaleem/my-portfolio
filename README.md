@@ -98,7 +98,7 @@ This portfolio is fully responsive and optimized for:
 👉 Add your portfolio live link here:
 
 ```bash
-https://affasaleem.netlify.app/
+https://affasaleem.github.io/my-portfolio/
 ```
 
 ---
