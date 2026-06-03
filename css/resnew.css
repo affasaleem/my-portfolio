@@ -363,9 +363,6 @@
         font-size: 1.8rem;
     }
 
-    /* .home-content .social-media a {
-        margin: 2.5rem .75rem 3rem;
-    } */
 
     .home .profession-container .profession-box {
         position: fixed;
@@ -393,10 +390,6 @@
         margin-top: -4rem;
     }
 
-    /* .about-content h2 {
-        text-align: center;
-    } */
-
     .about-content p {
         font-size: 1.8rem;
     }
@@ -406,23 +399,6 @@
         margin-top: -10rem;
         margin-left: -2rem;
     }
-
-    /* ====== */
-    /* .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skill-card {
-        padding: 2.5rem;
-    }
-
-    .skills-subtitle {
-        font-size: 1.4rem;
-    }
-
-    .skill-card-header h3 {
-        font-size: 2rem;
-    } */
 
     .contact-container {
         grid-template-columns: 1fr;
