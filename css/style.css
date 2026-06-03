@@ -312,8 +312,15 @@ span {
 }
 
 .about-img {
-    width: 45vw;
+    width: 40vw;
+    
 }
+
+/* .about-img {
+    width: 46vw;
+    max-width: 768px;
+    height: auto;
+} */
 
  .heading {
     font-size: 4.5rem;
