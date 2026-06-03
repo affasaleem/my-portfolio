@@ -420,6 +420,31 @@
         padding: 0 3% 30rem;
     }
 
+    .home-content{
+        width: 100vw;
+        margin-top: 10rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
+    }
+
+    .home .profession-container .profession-box {
+        position: fixed;
+        top: 62%;
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+    }     
+
     .home .profession-box .profession:nth-child(1) {
         transform: rotate(-90deg) translate(-110px, -220px);
     }
@@ -436,12 +461,53 @@
         transform: rotate(180deg) translate(-210px, -335px);
     }
 
+    .home .profession-container .overlay {
+        position: fixed;
+        top: 70rem;
+        left: 50%;
+    }
+
     .contact form .input-box input {
         width: 100%;
     }
 }
 
 @media (max-width: 365px) {
+    /* .home {
+        padding: 0 3% 30rem;
+    } */
+
+    .home-content{
+        width: 100vw;
+        margin-top: 10rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.3rem;
+    }
+
+    .home .profession-container .profession-box {
+        position: fixed;
+        top: 62%;
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+    }  
+
+    .home .profession-container .overlay {
+        position: fixed;
+        top: 65rem;
+        left: 50%;
+        
+    }
 
     .footer {
         flex-direction: column-reverse;
