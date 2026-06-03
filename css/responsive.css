@@ -188,7 +188,6 @@
         margin-left: -7rem;
     }
 
-    .services h2,
     .portfolio h2 {
         margin-bottom: 3rem;
     }
@@ -256,7 +255,7 @@
 
 
 
-
+>
 
 
 
@@ -353,52 +352,80 @@ body {
       transform: scale(1.05);
     }
 
-    /* skills section design */
-    /* body {
-        font-family: 'Outfit', sans-serif;
-        }
+/* ================= SKILLS RESPONSIVE ================== */
 
-    .glass {
-      background: rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+@media (max-width: 768px) {
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .skills-container {
+        grid-template-columns: 1fr;
     }
 
-    .light .glass {
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+    .skill-card {
+        padding: 2.5rem;
     }
 
-    .gradient-text {
-        background: linear-gradient(to right, #8b5cf6, #c4b5fd);
-        background-clip: text;           /* Standard (modern browsers) */
-        /*-webkit-background-clip: text;    Fallback for older WebKit browsers */
-        /* -webkit-text-fill-color: transparent; */
-        /* color: transparent;               Fallback for non-WebKit browsers */
-
-
-    .nav-link::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #8b5cf6;
-      transition: 0.3s;
-      margin-top: 4px;
+    .skills-subtitle {
+        font-size: 1.4rem;
     }
 
-    .nav-link:hover::after {
-      width: 100%;
+    .skill-card-header h3 {
+        font-size: 2rem;
+    }
+}
+    
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .skills-container,
+    .education-container,
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 
-    .project-card:hover {
-      transform: translateY(-6px);
+    .project-buttons {
+        flex-direction: column;
+    }
+}
+   
+
+
+    /* ================= CERTIFICATES  RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+
+    .certificate-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
-    .skill-pill:hover {
-      transform: scale(1.05);
-    } */
+    .certificate-modal-image img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .certificates-container {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-modal-details {
+        padding: 2.5rem;
+    }
+
+    .certificate-modal-details h3 {
+        font-size: 2.4rem;
+    }
+}
 
 
 /* ================= EDUCATION RESPONSIVE ================= */
