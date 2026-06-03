@@ -168,6 +168,7 @@
         position: fixed;
         top: 70rem;
         left: 50%;
+        /* margin-top: 13rem; */
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
         border-width: 23.9rem;
@@ -183,8 +184,8 @@
     }
     .about-img img {
         width: 70vw;
-        margin-top: -2rem;
-        margin-left: -5rem;
+        margin-top: -10rem;
+        margin-left: -7rem;
     }
 
     .services h2,
@@ -401,21 +402,6 @@ body {
 
 
 /* ================= EDUCATION RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-    .skills-container,
-    .education-container,
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-    .project-buttons {
-        flex-direction: column;
-    }
-
-}
-
 
 @media (max-width: 768px) {
 
