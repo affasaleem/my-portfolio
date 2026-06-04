@@ -311,9 +311,19 @@ span {
     gap: 4rem;
 }
 
-.about-img {
+/* .about-img {
     width: 40vw;
     
+} */
+.about-content {
+        /* width: 70vw; */
+        margin-top: 6rem;
+        margin-left: -8rem;
+    }
+.about-img img {
+        width: 40vw;
+        margin-top: -5rem;
+        margin-left: 10rem;
 }
 
 /* .about-img {
