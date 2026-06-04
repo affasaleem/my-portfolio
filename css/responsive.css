@@ -498,7 +498,7 @@
 
 }
 
-@media (max-width: 365px) {
+@media (max-width: 375px) {
     /* .home {
         padding: 0 3% 30rem;
     } */
@@ -530,7 +530,7 @@
 
     .home .profession-container .overlay {
         position: fixed;
-        top: 65rem;
+        top: 69rem;
         left: 50%;
         
     }
