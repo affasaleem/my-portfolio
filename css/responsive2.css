@@ -6,6 +6,7 @@
    BREAKPOINTS - LARGE DESKTOPS (max-width: 1200px)
    ========================================================================== */
 @media (max-width: 1200px) {
+
     /* 
      * Scale down root font size to automatically scale rem-based padding/margins.
      */
@@ -75,6 +76,7 @@
    BREAKPOINTS - LAPTOPS (max-width: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
+
     /* 
      * Fluid padding for header and sections on medium screens.
      */
@@ -102,6 +104,7 @@
    BREAKPOINTS - TABLETS (max-width: 991px)
    ========================================================================== */
 @media (max-width: 991px) {
+
     /* 
      * Highlight first item in the desktop navbar links for focus.
      */
@@ -168,6 +171,7 @@
    BREAKPOINTS - MOBILE & TABLET PORTRAIT (max-width: 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* 
      * Mobile Menu Toggles and Header Layout:
      * Reveal menu button, absolute positioning for navigation links.
@@ -194,8 +198,8 @@
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
         display: none;
-    } 
-    
+    }
+
     .navbar.active {
         display: block;
     }
@@ -254,7 +258,7 @@
         width: 100%;
         height: 100%;
     }
-    
+
     .home .profession-container .profession-box {
         position: fixed;
         top: 60%;
@@ -262,7 +266,7 @@
         border-radius: 0;
         width: 100%;
     }
-    
+
     .home .profession-box .profession {
         padding: 0 13px;
         left: auto;
@@ -326,7 +330,7 @@
     .about-content p {
         font-size: 2rem;
     }
-    
+
     .about-img img {
         width: 60vw;
         margin-top: -10rem;
@@ -391,6 +395,7 @@
    BREAKPOINTS - SMALL MOBILE & CUSTOM WIDTHS (max-width: 617px)
    ========================================================================== */
 @media (max-width: 617px) {
+
     /* 
      * Minor home content width alignment and overlay top alignments.
      */
@@ -425,6 +430,7 @@
    BREAKPOINTS - ULTRA MOBILE & PHONES (max-width: 450px)
    ========================================================================== */
 @media (max-width: 450px) {
+
     /* 
      * Downscale root font to 50% for maximum compact viewing.
      */
@@ -517,6 +523,7 @@
    BREAKPOINTS - VERY SMALL MOBILE / PORTRAIT PHONES (max-width: 375px)
    ========================================================================== */
 @media (max-width: 375px) {
+
     /* 
      * Scale headings, spacing, and stack footer elements vertically.
      */
