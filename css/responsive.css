@@ -329,6 +329,10 @@
         max-width: 280px;
     }
 
+    .hero-image-card {
+        margin-top: 1.5rem;
+    }
+
     .hero-float-card {
         padding: 0.6rem 0.85rem;
         font-size: 0.85rem;
@@ -346,31 +350,31 @@
         font-size: 0.65rem;
     }
 
-    .hero-float-card:nth-child(1) {
+    /* .hero-float-card:nth-child(1) {
         top: 5%;
         right: -8%;
         left: auto;
-    }
+    } */
 
     .hero-float-card:nth-child(2) {
-        top: -3%;
-        right: 0%;
-        left: auto;
+        top: 25%;
+        right: -28%;
+        /* left: auto; */
     }
 
     .hero-float-card:nth-child(3) {
-        top: 5%;
-        left: -8%;
+        top: 15%;
+        left: -25%;
     }
 
     .hero-float-card:nth-child(4) {
-        bottom: 8%;
-        left: -8%;
+        bottom: 35%;
+        left: -27%;
     }
 
     .hero-float-card:nth-child(5) {
-        bottom: 3%;
-        right: -8%;
+        bottom: 25%;
+        right: -27%;
         left: auto;
     }
 
@@ -382,7 +386,10 @@
         right: 0;
         bottom: -0.5rem;
     }
-
+    .about-content p {
+        width: 80%;
+        margin-inline: auto;
+    }
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -445,9 +452,13 @@
         width: 100%;
     }
 
+    .hero-image-card {
+        margin-top: 1rem;
+    }
+
     .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.875rem;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.7rem;
     }
 
     .about-highlights {
@@ -491,29 +502,29 @@
         font-size: 0.6rem;
     }
 
-    .hero-float-card:nth-child(1) {
+    /* .hero-float-card:nth-child(1) {
         top: 8%;
         right: -6%;
-    }
+    } */
 
     .hero-float-card:nth-child(2) {
-        top: -2%;
-        right: 2%;
+        top: 25%;
+        right: -25%;
     }
 
     .hero-float-card:nth-child(3) {
-        top: -2%;
-        left: -6%;
+        top: 10%;
+        left: -22%;
     }
 
     .hero-float-card:nth-child(4) {
-        bottom: 6%;
-        left: -6%;
+        bottom: 35%;
+        left: -20%;
     }
 
     .hero-float-card:nth-child(5) {
-        bottom: 1%;
-        right: -6%;
+        bottom: 20%;
+        right: -22%;
     }
     
 }
@@ -677,7 +688,7 @@
 
     .about-content p {
         width: 70%;
-        text-align: center;
+        margin-inline: auto;
     }
     .skill-icon-wrap {
         width: 40px;
