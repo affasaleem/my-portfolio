@@ -330,7 +330,48 @@
     }
 
     .hero-float-card {
-        display: none;
+        padding: 0.6rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .hero-float-card i {
+        font-size: 1.25rem;
+    }
+
+    .hero-float-card strong {
+        font-size: 0.75rem;
+    }
+
+    .hero-float-card span {
+        font-size: 0.65rem;
+    }
+
+    .hero-float-card:nth-child(1) {
+        top: 5%;
+        right: -8%;
+        left: auto;
+    }
+
+    .hero-float-card:nth-child(2) {
+        top: -3%;
+        right: 0%;
+        left: auto;
+    }
+
+    .hero-float-card:nth-child(3) {
+        top: -3%;
+        left: -8%;
+    }
+
+    .hero-float-card:nth-child(4) {
+        bottom: 8%;
+        left: -8%;
+    }
+
+    .hero-float-card:nth-child(5) {
+        bottom: 3%;
+        right: -8%;
+        left: auto;
     }
 
     .hero-orb--3 {
@@ -433,6 +474,47 @@
         padding: 1rem 1.25rem;
     }
 
+    .hero-float-card {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-float-card i {
+        font-size: 1.1rem;
+    }
+
+    .hero-float-card strong {
+        font-size: 0.7rem;
+    }
+
+    .hero-float-card span {
+        font-size: 0.6rem;
+    }
+
+    .hero-float-card:nth-child(1) {
+        top: 8%;
+        right: -6%;
+    }
+
+    .hero-float-card:nth-child(2) {
+        top: -2%;
+        right: 2%;
+    }
+
+    .hero-float-card:nth-child(3) {
+        top: -2%;
+        left: -6%;
+    }
+
+    .hero-float-card:nth-child(4) {
+        bottom: 6%;
+        left: -6%;
+    }
+
+    .hero-float-card:nth-child(5) {
+        bottom: 1%;
+        right: -6%;
+    }
     
 }
 
@@ -482,7 +564,48 @@
         top: 0.75rem;
         right: 0.75rem;
     }
-}
+
+    .hero-float-card {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    .hero-float-card i {
+        font-size: 1rem;
+    }
+
+    .hero-float-card strong {
+        font-size: 0.65rem;
+    }
+
+    .hero-float-card span {
+        font-size: 0.55rem;
+    }
+
+    .hero-float-card:nth-child(1) {
+        top: 10%;
+        right: -5%;
+    }
+
+    .hero-float-card:nth-child(2) {
+        top: -1%;
+        right: 3%;
+    }
+
+    .hero-float-card:nth-child(3) {
+        top: -1%;
+        left: -5%;
+    }
+
+    .hero-float-card:nth-child(4) {
+        bottom: 5%;
+        left: -5%;
+    }
+
+    .hero-float-card:nth-child(5) {
+        bottom: 0%;
+        right: -5%;
+    }
 
 /* --------------------------------------------------------------------------
    SMALL MOBILE (max-width: 375px)
@@ -556,6 +679,48 @@
 
     .footer-bottom p {
         font-size: 0.75rem;
+    }
+
+    .hero-float-card {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .hero-float-card i {
+        font-size: 0.9rem;
+    }
+
+    .hero-float-card strong {
+        font-size: 0.6rem;
+    }
+
+    .hero-float-card span {
+        font-size: 0.5rem;
+    }
+
+    .hero-float-card:nth-child(1) {
+        top: 12%;
+        right: -4%;
+    }
+
+    .hero-float-card:nth-child(2) {
+        top: 0%;
+        right: 4%;
+    }
+
+    .hero-float-card:nth-child(3) {
+        top: 0%;
+        left: -4%;
+    }
+
+    .hero-float-card:nth-child(4) {
+        bottom: 4%;
+        left: -4%;
+    }
+
+    .hero-float-card:nth-child(5) {
+        bottom: -2%;
+        right: -4%;
     }
 }
 
