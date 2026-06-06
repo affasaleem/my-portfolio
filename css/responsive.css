@@ -224,8 +224,38 @@
     }
 
     .hero-float-card {
-        right: 0;
+        right: auto;
+        left: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    .hero-float-card:nth-child(1) {
         top: 5%;
+        right: -8%;
+        left: auto;
+    }
+
+    .hero-float-card:nth-child(2) {
+        top: -5%;
+        right: 5%;
+        left: auto;
+    }
+
+    .hero-float-card:nth-child(3) {
+        top: -5%;
+        left: -10%;
+    }
+
+    .hero-float-card:nth-child(4) {
+        bottom: 10%;
+        left: -8%;
+    }
+
+    .hero-float-card:nth-child(5) {
+        bottom: 5%;
+        right: -8%;
+        left: auto;
     }
 
     .hero-orb--1 {
