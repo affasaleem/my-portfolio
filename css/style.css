@@ -627,13 +627,13 @@ ul {
 /* AI Researcher - Top right */
 .hero-float-card:nth-child(2) { 
     top: 25%;
-    right: -30%;
+    right: -25%;
     animation-delay: -1s;
 }
 
 /*  Undergraduate- Top left */
 .hero-float-card:nth-child(3) {
-    top: 5%;
+    top: 10%;
     left: -22%;
     animation-delay: 0s;
 }
@@ -647,7 +647,7 @@ ul {
 
 /* Entrepreneur - Bottom right */
 .hero-float-card:nth-child(5) {
-    bottom: 10%;
+    bottom: 25%;
     right: -20%;
     animation-delay: 2s;
 }
