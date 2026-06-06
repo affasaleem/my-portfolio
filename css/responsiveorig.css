@@ -17,13 +17,13 @@
     /* 
      * Adjust navbar links visual highlight for large desktops.
      */
-    .navbar a.active {
+    /* .navbar a.active {
         color: var(--white-color);
-    }
+    } */
 
-    .navbar a.active::before {
+    /* .navbar a.active::before {
         background: var(--white-color);
-    }
+    } */
 
     /* 
      * Hero Section Layout Adjustments:
@@ -38,7 +38,7 @@
     }
 
     .home .profession-container .overlay {
-        right: -9rem;
+        right: -18rem;
     }
 
     .home-img img {

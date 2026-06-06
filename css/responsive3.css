@@ -41,7 +41,7 @@ section {
     }
 
     .home-img img {
-        top: 15rem;
+        top: 50rem;
         right: 4rem;
         width: 32%;
     }
@@ -81,7 +81,8 @@ section {
     }
 
     .home-img img {
-        display: none; /* Hide profile image to avoid text overlapping the wheel */
+        display: none;
+        /* Hide profile image to avoid text overlapping the wheel */
     }
 
     .home .profession-container {
@@ -138,6 +139,7 @@ section {
    BREAKPOINT: 768px (Tablet)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* Menu Icon and Navigation Toggles */
     #menu-icon {
         display: block;
@@ -151,7 +153,8 @@ section {
     #darkMode-icon {
         font-size: 2.6rem;
         color: var(--text-color);
-        margin-left: auto; /* Push icons together on the right */
+        margin-left: auto;
+        /* Push icons together on the right */
     }
 
     .navbar {
@@ -191,7 +194,8 @@ section {
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 14rem 4% 45rem; /* padding bottom makes space for centered circle */
+        padding: 14rem 4% 45rem;
+        /* padding bottom makes space for centered circle */
         min-height: auto;
     }
 
@@ -306,7 +310,8 @@ section {
 
     .home {
         padding-top: 12rem;
-        padding-bottom: 34rem; /* space for smaller wheel */
+        padding-bottom: 34rem;
+        /* space for smaller wheel */
     }
 
     .home .profession-container {

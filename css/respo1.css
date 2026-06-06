@@ -1,9 +1,12 @@
-/* ==========================================
-   BREAKPOINTS - LARGE DEVICES
-========================================== */
+/* ==========================================================================
+   PORTFOLIO WEBSITE - RESPONSIVE STYLESHEET (V2)
+   ========================================================================== */
 
+/* ==========================================================================
+   BREAKPOINTS - LARGE DESKTOPS (max-width: 1200px)
+   ========================================================================== */
 @media (max-width: 1200px) {
-
+    /* Scale down root font size to automatically scale rem-based padding/margins */
     html {
         font-size: 55%;
     }
@@ -14,20 +17,26 @@
 
     .home .profession-container .profession-box {
         right: -12rem;
-        height: 85.8rem;
     }
 
     .home .profession-container .overlay {
-        right: -9rem;
+        right: -18rem;
+    }
+
+    .home-img img {
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+        width: 30%;
+        height: auto;
+        top: auto;
     }
 }
 
-/* ==========================================
-   BREAKPOINTS - LAPTOPS
-========================================== */
-
+/* ==========================================================================
+   BREAKPOINTS - LAPTOPS (max-width: 1024px)
+   ========================================================================== */
 @media (max-width: 1024px) {
-
     .header {
         padding: 2rem 3%;
     }
@@ -39,16 +48,18 @@
     .home .profession-container .profession-box {
         right: -22rem;
     }
+
+    .home-img img {
+        width: 32%;
+        right: 20px;
+    }
 }
 
-/* ==========================================
-   BREAKPOINTS - TABLETS
-========================================== */
-
+/* ==========================================================================
+   BREAKPOINTS - TABLETS (max-width: 991px)
+   ========================================================================== */
 @media (max-width: 991px) {
-
-    .navbar a:nth-child(1),
-    .navbar a:nth-child(2) {
+    .navbar a:nth-child(1) {
         color: var(--main-color);
     }
 
@@ -58,74 +69,46 @@
     }
 
     .home .home-content {
-        max-width: 50rem;
+        max-width: 45rem;
+        margin-left: 1rem;
     }
 
     .home .profession-container .profession-box {
-        right: -45rem;
+        right: -28rem;
     }
 
     .home .profession-container .overlay {
-        right: -39.5rem;
+        right: -23.5rem;
     }
 
     .home-img img {
         display: none;
     }
 
-    .services,
-    .portfolio,
-    .skills {
-        padding-bottom: 7rem;
-    }
-
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .contact {
-        min-height: auto;
-    }
-
-    .footer {
-        padding: 2rem 3%;
-    }
-
     .certificate-modal-content {
         grid-template-columns: 1fr;
         max-height: 90vh;
         overflow-y: auto;
+        max-width: 600px;
     }
 
     .certificate-modal-image img {
-        height: 350px;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
+        height: 300px;
     }
 }
 
-/* ==========================================
-   BREAKPOINTS - MOBILE & SMALL TABLETS
-========================================== */
-
+/* ==========================================================================
+   BREAKPOINTS - MOBILE & TABLET PORTRAIT (max-width: 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-
     #menu-icon {
         display: block;
     }
 
     #darkMode-icon {
-        position: absolute;
-        right: 7rem;
         font-size: 2.6rem;
         color: var(--text-color);
-        margin-bottom: .1rem;
+        margin-right: 2.5rem;
     }
 
     .navbar {
@@ -151,11 +134,6 @@
         color: var(--text-color);
     }
 
-    .navbar a:nth-child(1),
-    .navbar a:nth-child(2) {
-        color: var(--text-color);
-    }
-
     .navbar a.active {
         color: var(--main-color);
     }
@@ -164,104 +142,89 @@
         display: none;
     }
 
+    /* Home Section Mobile Layout */
     .home {
-        padding: 0 3% 23rem;
+        padding: 12rem 3% 6rem;
         justify-content: center;
         text-align: center;
+        min-height: auto;
+    }
+
+    .home-content {
+        margin-top: 0;
+        max-width: 100%;
     }
 
     .home-content h3 {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
+    }
+
+    .home-content p {
+        font-size: 1.6rem;
     }
 
     .home-content .social-media a {
         margin: 2.5rem .75rem 3rem;
     }
 
+    /* Hide rotating wheel and overlay on mobile to prevent overlapping */
     .home .profession-container {
-        left: 0;
-        width: 100%;
-        height: 100%;
+        display: none;
     }
 
-    .home .profession-container .profession-box {
-        position: fixed;
-        top: 60%;
-        left: 0;
-        border-radius: 0;
-        width: 100%;
-    }
-
-    .home .profession-box .profession {
-        padding: 0 13px;
-        left: auto;
-        transform-origin: 0;
-    }
-
-    .home .profession-box .circle {
-        position: fixed;
-        width: 670px;
-        height: 670px;
-        z-index: -1;
-    }
-
-    .home .profession-container .overlay {
-        position: fixed;
-        top: 70rem;
-        left: 50%;
-        right: 0;
-        transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
-        border-width: 23.9rem;
-    }
-
+    /* About Section Mobile Layout */
     .about {
         flex-direction: column;
         text-align: center;
+        gap: 3rem;
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+    }
+
+    .about-img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .about-content {
+        width: 100%;
+        margin: 0;
     }
 
     .about-content h2 {
         text-align: center;
     }
 
-    .about-img img {
-        width: 70vw;
-        margin-top: -10rem;
-        margin-left: -7rem;
+    .about-content p {
+        font-size: 1.6rem;
     }
 
-    .portfolio .portfolio-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testi-container .testi-wrapper {
-        padding: 5rem 0;
-    }
-
-    .testi-content .testi-slide {
-        padding: 3rem 2rem;
-    }
-
-    .testi-box .swiper-button-next,
-    .testi-box .swiper-button-prev {
-        display: none;
-    }
-
+    /* Collapse grid layouts to single-column layout */
     .skills-container,
-    .education-container,
-    .projects-container {
+    .projects-container,
+    .certificates-container,
+    .contact-container {
         grid-template-columns: 1fr;
     }
 
     .project-buttons {
         flex-direction: column;
+        gap: 1.5rem;
     }
 
-    .certificates-container {
-        grid-template-columns: 1fr;
+    .project-buttons a {
+        text-align: center;
+        width: 100%;
     }
 
     .certificate-modal-details {
@@ -272,6 +235,7 @@
         font-size: 2.4rem;
     }
 
+    /* Education Timeline Mobile Adjustment */
     .education-timeline::before {
         left: 10px;
     }
@@ -289,50 +253,55 @@
         width: 100%;
     }
 
-    .contact-form-wrapper .input-box {
+    /* Footer Mobile Adjustment */
+    .footer {
         flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+        padding: 3rem 3%;
+    }
+
+    .footer-text p {
+        font-size: 1.5rem;
+        width: 100%;
     }
 }
 
-/* ==========================================
-   BREAKPOINTS - SMALL MOBILE
-========================================== */
-
+/* ==========================================================================
+   BREAKPOINTS - SMALL MOBILE & CUSTOM WIDTHS (max-width: 617px)
+   ========================================================================== */
 @media (max-width: 617px) {
+    .home-content p {
+        font-size: 1.6rem;
+    }
 
-    .portfolio .portfolio-container {
-        grid-template-columns: 1fr;
+    .about-content p {
+        font-size: 1.6rem;
     }
 }
 
+/* ==========================================================================
+   BREAKPOINTS - ULTRA MOBILE & PHONES (max-width: 450px)
+   ========================================================================== */
 @media (max-width: 450px) {
-
     html {
         font-size: 50%;
     }
 
-    #darkMode-icon {
-        right: 6rem;
-    }
-
     .home {
-        padding: 0 3% 30rem;
+        padding: 10rem 3% 4rem;
     }
 
-    .home .profession-box .profession:nth-child(1) {
-        transform: rotate(-90deg) translate(-110px, -220px);
+    .home-content h3 {
+        font-size: 2.2rem;
     }
 
-    .home .profession-box .profession:nth-child(2) {
-        transform: rotate(0deg) translate(5px, -335px);
+    .home-content h1 {
+        font-size: 3.5rem;
     }
 
-    .home .profession-box .profession:nth-child(3) {
-        transform: rotate(90deg) translate(-105px, -440px);
-    }
-
-    .home .profession-box .profession:nth-child(4) {
-        transform: rotate(180deg) translate(-210px, -335px);
+    .contact form .input-box {
+        flex-direction: column;
     }
 
     .contact form .input-box input {
@@ -340,14 +309,19 @@
     }
 }
 
-@media (max-width: 365px) {
-
-    .footer {
-        flex-direction: column-reverse;
+/* ==========================================================================
+   BREAKPOINTS - VERY SMALL MOBILE / PORTRAIT PHONES (max-width: 375px)
+   ========================================================================== */
+@media (max-width: 375px) {
+    .home-content h3 {
+        font-size: 2rem;
     }
 
-    .footer p {
-        text-align: center;
-        margin-top: 2rem;
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
     }
 }
