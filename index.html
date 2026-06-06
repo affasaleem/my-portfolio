@@ -4,899 +4,703 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Affa Saleem | Portfolio </title>
+    <meta name="description"
+        content="Affa Saleem — Aspiring Software Developer & IT undergraduate specializing in full-stack development, AI, and modern web technologies.">
+    <meta name="author" content="Affa Saleem">
+    <meta name="keywords" content="Affa Saleem, Software Developer, Full Stack, Web Developer, Portfolio">
+    <title>Affa Saleem | Software Developer</title>
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="./css/style2.css">
-    <link rel="stylesheet" href="./css/respo1.css">
-
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
-    <!-- header design -->
-    <header class="header">
-        <a href="#" class="logo"> .af<i class='bx bxs-spa'></i></a>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <a href="#home" class="logo" aria-label="Affa Saleem Home">
+            <span class="logo-mark">AS</span>
+            <span class="logo-text">Affa Saleem</span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Main navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
-        <div class="bx bx-moon" id="darkMode-icon"></div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="bx bx-moon" id="themeIcon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+        </div>
     </header>
 
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, I am</h3>
-            <h1>Affa Saleem</h1>
-            <p>Aspiring Software Developer and IT undergraduate at the University of Colombo School of Computing,
-                passionate about AI, software engineering, and modern web technologies. Currently training
-                at Mars Tech International, building real-world skills in full-stack development and intelligent
-                digital solutions.</p>
-            <div class="social-media">
-                <!-- <a href="#"><i class='bx bxl-facebook' ></i></a> -->
-                <a href="https://github.com/affasaleem"><i class='bx bxl-github'></i></a>
-                <a href="https://lk.linkedin.com/in/affasaleem"><i class='bx bxl-linkedin'></i></a>
-                <!-- <a href="#"><i class='bx bxl-twitter' ></i></a> -->
-                <a href="https://www.instagram.com/ft.yara__"><i class='bx bxl-instagram-alt'></i></a>
+    <main>
 
-
-            </div>
-            <a href="./Frontend_Developer_CV_Affa_S.pdf" class="btn">Download CV</a>
-        </div>
-
-        <div class="profession-container">
-            <div class="profession-box">
-                <div class="profession" style="--i:0;">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>web Developer</h3>
-                </div>
-                <div class="profession" style="--i:1;">
-                    <i class='bx bxs-leaf'></i>
-                    <h3>AI Researcher</h3>
-                </div>
-                <div class="profession" style="--i:2;">
-                    <i class='bx bxs-graduation'></i>
-                    <h3>Undergraduate</h3>
-                </div>
-                <div class="profession" style="--i:3;">
-                    <i class='bx bx-paint'></i>
-                    <h3>Entrepreneur</h3>
-                </div>
-                <!-- <div class="profession" style="--i:4;">
-                    <i class='bx bxs-palette' ></i>
-                    <h3>Freelancer</h3>
-                </div> -->
-
-                <div class="circle"></div>
-            </div>
-            <div class="overlay"></div>
-        </div>
-        <div class="home-img">
-            <img src="./assets/images/home1.png" alt="">
-        </div>
-
-    </section>
-
-    <!-- about section design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="./assets/images/about.png" alt="">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Hi, I'm Here to help your Next Project!</h3>
-            <p>Passionate about creating clean, user-friendly, and impactful digital experiences.
-                I specialize in web development and continuously explore new technologies in AI and software engineering
-                to grow as a developer.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
-
-
-    <!-- ================= SKILLS SECTION ================= -->
-
-
-    <section class="skills" id="skills">
-
-        <div class="skills-heading">
-            <h2 class="heading">My <span>Skills</span></h2>
-
-            <p class="skills-subtitle">
-                Technologies and tools I use to build modern digital experiences.
-            </p>
-        </div>
-
-        <div class="skills-container">
-
-            <!-- Frontend -->
-            <div class="skill-card glass-card">
-
-                <div class="skill-card-header">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Frontend Development</h3>
-                </div>
-
-                <!-- Skill -->
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>HTML</span>
-                        <span class="skill-number" data-target="95">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="95%"></div>
-                    </div>
-
-                </div>
-
-                <!-- Skill -->
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>CSS</span>
-                        <span class="skill-number" data-target="90">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="90%"></div>
-                    </div>
-
-                </div>
-
-                <!-- Skill -->
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>JavaScript</span>
-                        <span class="skill-number" data-target="85">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="85%"></div>
-                    </div>
-
-                </div>
-
+        <!-- ==================== HERO ==================== -->
+        <section class="hero section" id="home">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-orb hero-orb--1"></div>
+                <div class="hero-orb hero-orb--2"></div>
+                <div class="hero-orb hero-orb--3"></div>
+                <div class="hero-grid"></div>
             </div>
 
-            <!-- Backend -->
-            <div class="skill-card glass-card">
-
-                <div class="skill-card-header">
-                    <i class='bx bx-server'></i>
-                    <h3>Backend Development</h3>
+            <div class="container hero-container">
+                <!-- Hero image — above content on mobile via CSS order -->
+                <div class="hero-visual reveal" data-reveal="up">
+                    <div class="hero-image-card glass">
+                        <div class="hero-image-glow"></div>
+                        <img src="assets/images/home1.png" alt="Affa Saleem — Software Developer" width="480"
+                            height="560" loading="eager">
+                        <div class="hero-badge">
+                            <span class="hero-badge-dot"></span>
+                            Available for work
+                        </div>
+                    </div>
+                    <div class="hero-float-card glass">
+                        <i class="bx bx-code-alt"></i>
+                        <div>
+                            <strong>Full Stack</strong>
+                            <span>Developer</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Node.js</span>
-                        <span class="skill-number" data-target="75">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="75%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>PHP</span>
-                        <span class="skill-number" data-target="70">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="70%"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Programming -->
-            <div class="skill-card glass-card">
-
-                <div class="skill-card-header">
-                    <i class='bx bx-terminal'></i>
-                    <h3>Programming Languages</h3>
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Python</span>
-                        <span class="skill-number" data-target="80">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="80%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>C</span>
-                        <span class="skill-number" data-target="65">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="65%"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Tools -->
-
-            <div class="skill-card glass-card">
-
-                <div class="skill-card-header">
-                    <i class='bx bx-wrench'></i>
-                    <h3>Tools & Technologies</h3>
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Git</span>
-                        <span class="skill-number" data-target="60">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="60%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>GitHub</span>
-                        <span class="skill-number" data-target="85">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="85%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>VS Code</span>
-                        <span class="skill-number" data-target="90">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="90%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Canva</span>
-                        <span class="skill-number" data-target="95">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="95%"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Soft Skills -->
-
-            <div class="skill-card glass-card">
-
-                <div class="skill-card-header">
-                    <i class='bx bx-brain'></i>
-                    <h3>Soft Skills</h3>
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Problem Solving</span>
-                        <span class="skill-number" data-target="80">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="80%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Communication</span>
-                        <span class="skill-number" data-target="85">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="85%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Creativity</span>
-                        <span class="skill-number" data-target="95">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="95%"></div>
-                    </div>
-
-                </div>
-
-                <div class="skill-item">
-
-                    <div class="skill-info">
-                        <span>Teamwork</span>
-                        <span class="skill-number" data-target="90">0%</span>
-                    </div>
-
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="90%"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-    </section>
-
-
-
-    <!-- ================= PROJECTS SECTION ================= -->
-    <section class="projects" id="projects">
-
-        <h2 class="heading">Latest <span>Projects</span></h2>
-
-        <div class="projects-container">
-
-            <!-- Project Card -->
-            <div class="project-card glass-card">
-
-                <div class="project-image">
-                    <img src="./assets/projects/myportfolio.png" alt="">
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Portfolio Website</h3>
-
-                    <p>
-                        Responsive personal portfolio website
-                        with dark mode and animations.
+                <div class="hero-content">
+                    <p class="section-label reveal" data-reveal="up">Hello, I'm</p>
+                    <h1 class="hero-title reveal" data-reveal="up">
+                        Affa <span class="text-gradient">Saleem</span>
+                    </h1>
+                    <p class="hero-role reveal" data-reveal="up">
+                        Aspiring Software Developer &amp; IT Undergraduate
+                    </p>
+                    <p class="hero-desc reveal" data-reveal="up">
+                        Passionate about AI, software engineering, and modern web technologies.
+                        Currently training at Mars Tech International, building real-world skills in
+                        full-stack development and intelligent digital solutions.
                     </p>
 
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <div class="project-buttons">
-                        <a href="https://github.com/affasaleem/my-portfolio" target="_blank">
-                            GitHub
+                    <div class="hero-cta reveal" data-reveal="up">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get in Touch</span>
+                            <i class="bx bx-right-arrow-alt"></i>
                         </a>
-
-                        <a href="https://affasaleem.github.io/my-portfolio/" target="_blank">
-                            Live Demo
+                        <a href="Frontend_Developer_CV_Affa_S.pdf" class="btn btn-outline" download>
+                            <i class="bx bx-download"></i>
+                            <span>Download CV</span>
                         </a>
                     </div>
 
-                </div>
-            </div>
-
-            <!-- Project Card -->
-            <div class="project-card glass-card">
-
-                <div class="project-image">
-                    <img src="./assets/projects/Galle Face Hotel.png" alt="Galle Face Hotel">
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Hotel Website</h3>
-
-                    <p>
-                        Modern hotel website design with responsive layout and animations.
-                    </p>
-
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                    </div>
-
-                    <div class="project-buttons">
-                        <a href="https://github.com/affasaleem/Full-Stack-Web-Development/tree/main/Assignments/HTML"
-                            target="_blank">
-                            GitHub
+                    <div class="hero-social reveal" data-reveal="up">
+                        <a href="https://github.com/affasaleem" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="bx bxl-github"></i>
                         </a>
-
-                        <a href="https://yourdemo.com" target="_blank">
-                            Live Demo
+                        <a href="https://lk.linkedin.com/in/affasaleem" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ft.yara__" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">
+                            <i class="bx bxl-instagram-alt"></i>
                         </a>
                     </div>
-
                 </div>
             </div>
 
-        </div>
-    </section>
+            <a href="#about" class="hero-scroll" aria-label="Scroll to about section">
+                <span>Scroll</span>
+                <i class="bx bx-chevron-down"></i>
+            </a>
+        </section>
 
-    <!-- ================= CERTIFICATES SECTION ================= -->
-
-    <!-- ================= CERTIFICATES SHOWCASE SECTION ================= -->
-
-    <section class="certificates-section" id="certificates">
-
-        <div class="section-header">
-            <h2 class="heading">My <span>Certificates</span></h2>
-
-            <p class="section-subtitle">
-                Certifications, workshops, and learning achievements.
-            </p>
-        </div>
-
-        <div class="certificates-container">
-
-            <!-- Certificate Card -->
-            <div class="certificate-card glass-card" data-title="Front-End Web Development"
-                data-org="University of Moratuwa, Sri Lanka (CODL & Dept. of IT)" data-year="2026"
-                data-description="University‑certified front‑end web fundamentals"
-                data-image="./assets/certficates/Front-End_Web_Development_E-Certificate.jpg">
-
-                <div class="certificate-image">
-                    <img src="./assets/certficates/Front-End_Web_Development_E-Certificate.jpg" alt="Certificate">
-                </div>
-
-                <div class="certificate-content">
-                    <h3>Front-End Web Development</h3>
-
-                    <h4>UoM, Sri Lanka (CODL & Dept. of IT)</h4>
-
-                    <span>2026</span>
-
-                    <p>University‑certified front‑end web fundamentals
+        <!-- ==================== ABOUT ==================== -->
+        <section class="about section" id="about">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Introduction</p>
+                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                    <p class="section-desc">
+                        Building clean, user-friendly, and impactful digital experiences.
                     </p>
+                </header>
 
-                    <button class="certificate-btn">
-                        View Certificate
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Certificate Card -->
-            <div class="certificate-card glass-card" data-title="Full Stack Developer Course"
-                data-org="Simplilearn (SkillUP)" data-year="2026"
-                data-description="Industry-recognized online certification in full stack development"
-                data-image="./assets/certficates/Full_Stack_Developer _E-Certificate.jpg">
-
-                <div class="certificate-image">
-                    <img src="./assets/certficates/Full_Stack_Developer _E-Certificate.jpg" alt="Certificate">
-                </div>
-
-                <div class="certificate-content">
-                    <h3>Full Stack Developer Course</h3>
-
-                    <h4>Simplilearn (SkillUP)</h4>
-
-                    <span>2026</span>
-
-                    <p>Industry-recognized online certification in full stack development
-                    </p>
-
-                    <button class="certificate-btn">
-                        View Certificate
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Certificate Card -->
-            <div class="certificate-card glass-card" data-title="Web Design for Beginners"
-                data-org="UoM, Sri Lanka (CODL & Dept. of IT)" data-year="2026"
-                data-description="University‑certified foundation in web design"
-                data-image="./assets/certficates/Web_Design_for_Beginners_E-Certificate.jpg">
-
-                <div class="certificate-image">
-                    <img src="./assets/certficates/Web_Design_for_Beginners_E-Certificate.jpg" alt="Certificate">
-                </div>
-
-                <div class="certificate-content">
-                    <h3>Web Design for Beginners</h3>
-
-                    <h4>UoM, Sri Lanka (CODL & Dept. of IT)</h4>
-
-                    <span>2026</span>
-
-                    <p>
-                        University‑certified foundation in web design
-                    </p>
-
-                    <button class="certificate-btn">
-                        View Certificate
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Certificate Card -->
-            <div class="certificate-card glass-card" data-title="Professional Networking for Career Growth"
-                data-org="HP LIFE (HP Foundation)" data-year="2026"
-                data-description="Career-focused certification in professional networking and personal branding"
-                data-image="./assets/certficates/Professional_Networking_for_Career_Growth_E-Certificate.jpg">
-
-                <div class="certificate-image">
-                    <img src="./assets/certficates/Professional_Networking_for_Career_Growth_E-Certificate.jpg"
-                        alt="Certificate">
-                </div>
-
-                <div class="certificate-content">
-                    <h3>Professional Networking for Career Growth</h3>
-
-                    <h4>HP LIFE (HP Foundation)</h4>
-
-                    <span>2026</span>
-
-                    <p>
-                        Career-focused certification in professional networking and personal branding
-                    </p>
-
-                    <button class="certificate-btn">
-                        View Certificate
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= CERTIFICATE MODAL ================= -->
-
-    <div class="certificate-modal" id="certificateModal">
-
-        <div class="certificate-modal-content">
-
-            <span class="certificate-close-btn">&times;</span>
-
-            <div class="certificate-modal-image">
-                <img src="" id="modalCertificateImage" alt="">
-            </div>
-
-            <div class="certificate-modal-details">
-
-                <h3 id="modalCertificateTitle"></h3>
-
-                <h4 id="modalCertificateOrg"></h4>
-
-                <span id="modalCertificateYear"></span>
-
-                <p id="modalCertificateDescription"></p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ================= EDUCATION SECTION ================= -->
-
-    <section class="education-section" id="education">
-
-        <div class="section-header">
-            <h2 class="heading">My <span>Education</span></h2>
-            <p class="section-subtitle">
-                My academic journey, technical learning, and development experience.
-            </p>
-        </div>
-
-        <div class="education-timeline">
-
-            <!-- Timeline Item -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content glass-card">
-
-                    <span class="timeline-year">2024 - Present</span>
-
-                    <h3>Bachelor of Information Technology</h3>
-
-                    <h4>University of Colombo School of Computing (UCSC)</h4>
-
-                    <p>
-                        Undergraduate IT degree covering programming, databases, web technologies, and software
-                        engineering fundamentals.
-                    </p>
-
-                    <div class="timeline-skills">
-
-                        <span>Programming</span>
-                        <span>Databases</span>
-                        <span>Web Development</span>
-                        <span>Software Engineering</span>
+                <div class="about-grid">
+                    <div class="about-visual reveal" data-reveal="left">
+                        <div class="about-image-frame glass">
+                            <div class="about-frame-accent"></div>
+                            <img src="assets/images/about.png" alt="Affa Saleem working on a project" width="420"
+                                height="500" loading="lazy">
+                        </div>
+                        <div class="about-stat-card glass">
+                            <span class="about-stat-number">2+</span>
+                            <span class="about-stat-label">Years Learning</span>
+                        </div>
                     </div>
 
-                </div>
-            </div>
+                    <div class="about-content reveal" data-reveal="right">
+                        <h3>Hi, I'm here to help your next project!</h3>
+                        <p>
+                            Passionate about creating clean, user-friendly, and impactful digital experiences.
+                            I specialize in web development and continuously explore new technologies in AI
+                            and software engineering to grow as a developer.
+                        </p>
+                        <p>
+                            As an IT undergraduate at the University of Colombo School of Computing and a trainee
+                            at Mars Tech International, I combine academic foundations with hands-on project experience.
+                        </p>
 
-            <!-- Timeline Item -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
+                        <div class="about-highlights">
+                            <div class="about-highlight glass">
+                                <i class="bx bxs-graduation"></i>
+                                <div>
+                                    <strong>BIT @ UCSC</strong>
+                                    <span>University of Colombo</span>
+                                </div>
+                            </div>
+                            <div class="about-highlight glass">
+                                <i class="bx bx-brain"></i>
+                                <div>
+                                    <strong>AI Researcher</strong>
+                                    <span>Mars Tech International</span>
+                                </div>
+                            </div>
+                            <div class="about-highlight glass">
+                                <i class="bx bx-code-block"></i>
+                                <div>
+                                    <strong>Web Developer</strong>
+                                    <span>Full-Stack Focus</span>
+                                </div>
+                            </div>
+                            <div class="about-highlight glass">
+                                <i class="bx bx-paint"></i>
+                                <div>
+                                    <strong>Entrepreneur</strong>
+                                    <span>YARA MEHENDI</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="timeline-content glass-card">
-
-                    <span class="timeline-year">2023 – Present</span>
-
-                    <h3>Artificial Intelligence Degree</h3>
-
-                    <h4>Mars Tech International (Pvt) Ltd</h4>
-
-                    <p>
-                        Specialized program in artificial intelligence, machine learning fundamentals, and intelligent
-                        systems.
-                    </p>
-
-                    <div class="timeline-skills">
-                        <span>AI Fundamentals</span>
-                        <span>Machine Learning</span>
-                        <span>Intelligent Systems</span>
-                        <span>Data-Driven Thinking</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Timeline Item -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content glass-card">
-
-                    <span class="timeline-year">2018 – 2020 (Completed)</span>
-
-                    <h3>GCE Advanced Level — Physical Science Stream</h3>
-
-                    <h4>KM/Mahmud Ladies College, Kalmunai (National School)</h4>
-
-                    <p>
-                        National school qualification building analytical thinking, mathematical reasoning, and
-                        problem-solving foundations.
-                    </p>
-
-                    <div class="timeline-skills">
-                        <span>Analytical Thinking</span>
-                        <span>Mathematical Reasoning</span>
-                        <span>Problem-Solving</span>
-                        <span>Scientific Logic</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Timeline Item -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content glass-card">
-
-                    <span class="timeline-year">2018 – 2019 (Completed)</span>
-
-                    <h3>Diploma in ePlus Certified Office Application Expert</h3>
-
-                    <h4>IDM Nation Campus, Kalmunai</h4>
-
-                    <p>
-                        Certified diploma in advanced office productivity tools and professional document management.
-                    </p>
-
-                    <div class="timeline-skills">
-                        <span>Office Applications</span>
-                        <span>Productivity Tools</span>
-                        <span>Document Management</span>
-                        <span>Spreadsheet Handling</span>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT SECTION ================= -->
-
-    <section class="contact" id="contact">
-
-        <div class="contact-top">
-
-            <h2 class="heading">
-                Let's Work <span>Together!</span>
-            </h2>
-
-            <p class="contact-subtitle">
-                Have a project idea, collaboration, or opportunity?
-                Feel free to contact me through any platform below.
-            </p>
-
-        </div>
-
-        <div class="contact-container">
-
-            <!-- LEFT CONTACT INFO -->
-
-            <div class="contact-info">
-
-                <div class="contact-card glass-card">
-
-                    <i class='bx bx-envelope'></i>
-
-                    <div>
-                        <h3>Email</h3>
-                        <a href="https://mail.google.com/mail/u/0/#sent?compose=new" target="_blank">
-                            affasaleem.it@gmail.com
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's Connect</span>
+                            <i class="bx bx-right-arrow-alt"></i>
                         </a>
                     </div>
-
                 </div>
-
-                <!-- <div class="contact-card glass-card">
-
-                <i class='bx bx-phone'></i>
-
-                <div>
-                    <h3>Phone</h3>
-                    <p>+94 77 123 4567</p>
-                </div>
-
-            </div> -->
-
-                <div class="contact-card glass-card">
-
-                    <i class='bx bxl-linkedin'></i>
-
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <a href="https://lk.linkedin.com/in/affasaleem" target="_blank">
-
-                            linkedin.com/in/affasaleem
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="contact-card glass-card">
-
-                    <i class='bx bxl-github'></i>
-
-                    <div>
-                        <h3>GitHub</h3>
-
-                        <a href="https://github.com/affasaleem" target="_blank">
-
-                            github.com/affasaleem
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="availability glass-card">
-
-                    <span class="status-dot"></span>
-
-                    Available for Freelance &
-                    Internship Opportunities
-
-                </div>
-
             </div>
+        </section>
 
-            <!-- RIGHT CONTACT FORM -->
+        <!-- ==================== SKILLS ==================== -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Expertise</p>
+                    <h2 class="section-title">My <span class="text-gradient">Skills</span></h2>
+                    <p class="section-desc">
+                        Technologies and tools I use to build modern digital experiences.
+                    </p>
+                </header>
 
-            <div class="contact-form-wrapper glass-card">
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <article class="skill-category glass reveal" data-reveal="up">
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <i class="bx bx-code-alt"></i>
+                            </div>
+                            <h3>Frontend</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-level="95">
+                                <div class="skill-item-top">
+                                    <span>HTML</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                            <li class="skill-item" data-level="90">
+                                <div class="skill-item-top">
+                                    <span>CSS</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                            <li class="skill-item" data-level="85">
+                                <div class="skill-item-top">
+                                    <span>JavaScript</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                        </ul>
+                    </article>
 
-                <form id="contactForm">
+                    <!-- Backend -->
+                    <article class="skill-category glass reveal" data-reveal="up">
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <i class="bx bx-server"></i>
+                            </div>
+                            <h3>Backend</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-level="75">
+                                <div class="skill-item-top">
+                                    <span>Node.js</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                            <li class="skill-item" data-level="70">
+                                <div class="skill-item-top">
+                                    <span>PHP</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                        </ul>
+                    </article>
 
-                    <div class="input-box">
+                    <!-- Programming -->
+                    <article class="skill-category glass reveal" data-reveal="up">
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <i class="bx bx-terminal"></i>
+                            </div>
+                            <h3>Programming</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-level="80">
+                                <div class="skill-item-top">
+                                    <span>Python</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                            <li class="skill-item" data-level="65">
+                                <div class="skill-item-top">
+                                    <span>C</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill"></div></div>
+                            </li>
+                        </ul>
+                    </article>
 
-                        <input type="text" id="name" placeholder="Full Name" required>
+                    <!-- Tools -->
+                    <article class="skill-category glass reveal" data-reveal="up">
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <i class="bx bx-wrench"></i>
+                            </div>
+                            <h3>Tools &amp; Technologies</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Canva</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </article>
 
-                        <input type="email" id="email" placeholder="Email Address" required>
-
-                    </div>
-
-                    <div class="input-box">
-
-                        <input type="number" placeholder="Mobile Number">
-
-                        <input type="text" placeholder="Subject">
-
-                    </div>
-
-                    <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-
-                    <button type="submit" class="btn">
-                        Send Message
-                    </button>
-
-                </form>
-
-                <!-- Success Message -->
-
-                <div class="success-message" id="successMessage">
-
-                    <i class='bx bx-check-circle'></i>
-
-                    Message Sent Successfully!
-
+                    <!-- Soft Skills -->
+                    <article class="skill-category glass reveal" data-reveal="up">
+                        <div class="skill-category-header">
+                            <div class="skill-icon-wrap">
+                                <i class="bx bx-brain"></i>
+                            </div>
+                            <h3>Soft Skills</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Creativity</span>
+                            <span class="skill-tag">Teamwork</span>
+                        </div>
+                    </article>
                 </div>
-
             </div>
+        </section>
 
-        </div>
+        <!-- ==================== PROJECTS ==================== -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Portfolio</p>
+                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                    <p class="section-desc">
+                        A selection of recent work showcasing my development skills.
+                    </p>
+                </header>
 
-    </section>
+                <div class="projects-grid">
+                    <article class="project-card reveal" data-reveal="up">
+                        <div class="project-image">
+                            <img src="assets/projects/myportfolio.png" alt="Portfolio Website project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://affasaleem.github.io/my-portfolio/" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <i class="bx bx-link-external"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/affasaleem/my-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <i class="bx bxl-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info glass">
+                            <h3>Portfolio Website</h3>
+                            <p>Responsive personal portfolio with dark mode, animations, and modern UI.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
 
+                    <article class="project-card reveal" data-reveal="up">
+                        <div class="project-image">
+                            <img src="assets/projects/Galle Face Hotel.png" alt="Hotel Website project" loading="lazy">
+                            <div class="project-overlay">
+                                <a href="https://yourdemo.com" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="bx bx-link-external"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/affasaleem/Full-Stack-Web-Development/tree/main/Assignments/HTML"
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                    <i class="bx bxl-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info glass">
+                            <h3>Hotel Website</h3>
+                            <p>Modern hotel website design with responsive layout and smooth animations.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <!-- ==================== EDUCATION ==================== -->
+        <section class="education section" id="education">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Academic Journey</p>
+                    <h2 class="section-title">My <span class="text-gradient">Education</span></h2>
+                    <p class="section-desc">
+                        My academic journey, technical learning, and development experience.
+                    </p>
+                </header>
 
+                <div class="timeline">
+                    <article class="timeline-item reveal" data-reveal="up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card glass">
+                            <span class="timeline-date">2024 — Present</span>
+                            <h3>Bachelor of Information Technology</h3>
+                            <h4>University of Colombo School of Computing (UCSC)</h4>
+                            <p>
+                                Undergraduate IT degree covering programming, databases, web technologies,
+                                and software engineering fundamentals.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Programming</span>
+                                <span>Databases</span>
+                                <span>Web Development</span>
+                                <span>Software Engineering</span>
+                            </div>
+                        </div>
+                    </article>
 
-    <!-- footer design -->
+                    <article class="timeline-item reveal" data-reveal="up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card glass">
+                            <span class="timeline-date">2023 — Present</span>
+                            <h3>Artificial Intelligence Degree</h3>
+                            <h4>Mars Tech International (Pvt) Ltd</h4>
+                            <p>
+                                Specialized program in artificial intelligence, machine learning fundamentals,
+                                and intelligent systems.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>AI Fundamentals</span>
+                                <span>Machine Learning</span>
+                                <span>Intelligent Systems</span>
+                                <span>Data-Driven Thinking</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal" data-reveal="up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card glass">
+                            <span class="timeline-date">2018 — 2020</span>
+                            <h3>GCE Advanced Level — Physical Science</h3>
+                            <h4>KM/Mahmud Ladies College, Kalmunai</h4>
+                            <p>
+                                National school qualification building analytical thinking, mathematical reasoning,
+                                and problem-solving foundations.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Analytical Thinking</span>
+                                <span>Mathematical Reasoning</span>
+                                <span>Problem-Solving</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal" data-reveal="up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-card glass">
+                            <span class="timeline-date">2018 — 2019</span>
+                            <h3>Diploma in ePlus Certified Office Application Expert</h3>
+                            <h4>IDM Nation Campus, Kalmunai</h4>
+                            <p>
+                                Certified diploma in advanced office productivity tools and
+                                professional document management.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Office Applications</span>
+                                <span>Productivity Tools</span>
+                                <span>Document Management</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CERTIFICATES ==================== -->
+        <section class="certificates section" id="certificates">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Achievements</p>
+                    <h2 class="section-title">My <span class="text-gradient">Certificates</span></h2>
+                    <p class="section-desc">
+                        Certifications, workshops, and learning achievements.
+                    </p>
+                </header>
+
+                <div class="certificates-grid">
+                    <article class="certificate-card glass reveal" data-reveal="up"
+                        data-title="Front-End Web Development"
+                        data-org="University of Moratuwa, Sri Lanka (CODL &amp; Dept. of IT)"
+                        data-year="2026"
+                        data-description="University-certified front-end web fundamentals"
+                        data-image="assets/certficates/Front-End_Web_Development_E-Certificate.jpg">
+                        <div class="certificate-thumb">
+                            <img src="assets/certficates/Front-End_Web_Development_E-Certificate.jpg"
+                                alt="Front-End Web Development Certificate" loading="lazy">
+                        </div>
+                        <div class="certificate-body">
+                            <span class="certificate-year">2026</span>
+                            <h3>Front-End Web Development</h3>
+                            <p>UoM, Sri Lanka (CODL &amp; Dept. of IT)</p>
+                            <button class="certificate-btn" type="button">View Certificate</button>
+                        </div>
+                    </article>
+
+                    <article class="certificate-card glass reveal" data-reveal="up"
+                        data-title="Full Stack Developer Course"
+                        data-org="Simplilearn (SkillUP)"
+                        data-year="2026"
+                        data-description="Industry-recognized online certification in full stack development"
+                        data-image="assets/certficates/Full_Stack_Developer _E-Certificate.jpg">
+                        <div class="certificate-thumb">
+                            <img src="assets/certficates/Full_Stack_Developer _E-Certificate.jpg"
+                                alt="Full Stack Developer Certificate" loading="lazy">
+                        </div>
+                        <div class="certificate-body">
+                            <span class="certificate-year">2026</span>
+                            <h3>Full Stack Developer Course</h3>
+                            <p>Simplilearn (SkillUP)</p>
+                            <button class="certificate-btn" type="button">View Certificate</button>
+                        </div>
+                    </article>
+
+                    <article class="certificate-card glass reveal" data-reveal="up"
+                        data-title="Web Design for Beginners"
+                        data-org="UoM, Sri Lanka (CODL &amp; Dept. of IT)"
+                        data-year="2026"
+                        data-description="University-certified foundation in web design"
+                        data-image="assets/certficates/Web_Design_for_Beginners_E-Certificate.jpg">
+                        <div class="certificate-thumb">
+                            <img src="assets/certficates/Web_Design_for_Beginners_E-Certificate.jpg"
+                                alt="Web Design for Beginners Certificate" loading="lazy">
+                        </div>
+                        <div class="certificate-body">
+                            <span class="certificate-year">2026</span>
+                            <h3>Web Design for Beginners</h3>
+                            <p>UoM, Sri Lanka (CODL &amp; Dept. of IT)</p>
+                            <button class="certificate-btn" type="button">View Certificate</button>
+                        </div>
+                    </article>
+
+                    <article class="certificate-card glass reveal" data-reveal="up"
+                        data-title="Professional Networking for Career Growth"
+                        data-org="HP LIFE (HP Foundation)"
+                        data-year="2026"
+                        data-description="Career-focused certification in professional networking and personal branding"
+                        data-image="assets/certficates/Professional_Networking_for_Career_Growth_E-Certificate.jpg">
+                        <div class="certificate-thumb">
+                            <img src="assets/certficates/Professional_Networking_for_Career_Growth_E-Certificate.jpg"
+                                alt="Professional Networking Certificate" loading="lazy">
+                        </div>
+                        <div class="certificate-body">
+                            <span class="certificate-year">2026</span>
+                            <h3>Professional Networking for Career Growth</h3>
+                            <p>HP LIFE (HP Foundation)</p>
+                            <button class="certificate-btn" type="button">View Certificate</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Get in Touch</p>
+                    <h2 class="section-title">Let's Work <span class="text-gradient">Together</span></h2>
+                    <p class="section-desc">
+                        Have a project idea, collaboration, or opportunity? Reach out through any platform below.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal" data-reveal="left">
+                        <div class="contact-card glass">
+                            <div class="contact-card-icon"><i class="bx bx-envelope"></i></div>
+                            <div>
+                                <h3>Email</h3>
+                                <a href="mailto:affasaleem.it@gmail.com">affasaleem.it@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-card glass">
+                            <div class="contact-card-icon"><i class="bx bxl-linkedin"></i></div>
+                            <div>
+                                <h3>LinkedIn</h3>
+                                <a href="https://lk.linkedin.com/in/affasaleem" target="_blank"
+                                    rel="noopener noreferrer">linkedin.com/in/affasaleem</a>
+                            </div>
+                        </div>
+                        <div class="contact-card glass">
+                            <div class="contact-card-icon"><i class="bx bxl-github"></i></div>
+                            <div>
+                                <h3>GitHub</h3>
+                                <a href="https://github.com/affasaleem" target="_blank"
+                                    rel="noopener noreferrer">github.com/affasaleem</a>
+                            </div>
+                        </div>
+                        <div class="contact-status glass">
+                            <span class="status-pulse"></span>
+                            Available for Freelance &amp; Internship Opportunities
+                        </div>
+                    </div>
+
+                    <form class="contact-form glass reveal" data-reveal="right" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Mobile Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+94 77 000 0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Message</span>
+                            <i class="bx bx-send"></i>
+                        </button>
+                        <div class="form-success" id="formSuccess" role="alert" hidden>
+                            <i class="bx bx-check-circle"></i>
+                            Message sent successfully!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
-        <div class="footer-text">
-            <p>Copyright &copy; 2026 by Affa Saleem | All Rights Reserved.</p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Affa Saleem · Junior Software Developer | All Rights Reserved.</p>
+                <a href="#home" class="back-to-top" aria-label="Back to top">
+                    <i class="bx bx-up-arrow-alt"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- ==================== CERTIFICATE MODAL ==================== -->
+    <div class="modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-content glass">
+            <button class="modal-close" type="button" aria-label="Close modal" data-close-modal>
+                <i class="bx bx-x"></i>
+            </button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-year" id="modalYear"></span>
+                    <h3 id="modalTitle"></h3>
+                    <h4 id="modalOrg"></h4>
+                    <p id="modalDesc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- custom js -->
     <script src="js/script.js"></script>
-
-    <!-- skill js -->
-
 </body>
 
 </html>

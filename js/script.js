@@ -1,267 +1,253 @@
-/*========== menu icon navbar ==========*/
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+/**
+ * Affa Saleem Portfolio — Main Script
+ * Handles navigation, theme, scroll animations, skills, modal, and form
+ */
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle('bx-x');
-  navbar.classList.toggle('active');
+'use strict';
 
-}
-
-
-/*========== scroll sections active link ==========*/
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*='+ id + ']') .classList.add('active');
-            });
-        };
-    });
-    /*========== sticky navbar ==========*/
-    let header = document.querySelector('.header');
-    header.classList.toggle('sticky',window.scrollY > 100);
-
-
-    /*========== remove menu icon navbar when click navbar link (scroll) ==========*/
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
-
-};
-
-
-/*========== swiper ==========*/
-var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      grabCurser: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-  });
-
-/*========== dark light mode ==========*/
-let darkModeIcon = document.querySelector('#darkMode-icon');
-
-darkModeIcon.onclick = () => {
-  darkModeIcon.classList.toggle('bx-sun');
-  document.body.classList.toggle('dark-mode');
-};
-
-/*========== scroll reveal ==========*/
-ScrollReveal({
-  // reset: true,
-  distance: '80px',
-  duration: 2000,
-  delay: 200
-});
-
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testi-wrapper, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
-ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
-
-
-
-
-// =========================================================
-// SKILLS ANIMATION
-// =========================================================
-
+/* ==========================================================================
+   DOM REFERENCES
+   ========================================================================== */
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.querySelectorAll('.nav-link');
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+const certificateModal = document.getElementById('certificateModal');
+const certificateCards = document.querySelectorAll('.certificate-card');
+const revealElements = document.querySelectorAll('.reveal');
 const skillSection = document.querySelector('.skills');
 
-const progressBars = document.querySelectorAll('.skill-progress-bar');
+/* ==========================================================================
+   THEME TOGGLE (Dark / Light Mode)
+   ========================================================================== */
+const THEME_KEY = 'portfolio-theme';
 
-const skillNumbers = document.querySelectorAll('.skill-number');
-
-let started = false;
-
-function startSkillAnimation() {
-
-    if (started) return;
-
-    const sectionTop = skillSection.getBoundingClientRect().top;
-
-    if (sectionTop < window.innerHeight - 100) {
-
-        // Animate Progress Bars
-        progressBars.forEach((bar) => {
-
-            const width = bar.getAttribute('data-width');
-
-            bar.style.width = width;
-        });
-
-        // Animate Numbers
-        skillNumbers.forEach((number) => {
-
-            const target = +number.getAttribute('data-target');
-
-            let count = 0;
-
-            const speed = target / 50;
-
-            function updateCounter() {
-
-                count += speed;
-
-                if (count < target) {
-
-                    number.innerText = `${Math.ceil(count)}%`;
-
-                    requestAnimationFrame(updateCounter);
-
-                } else {
-
-                    number.innerText = `${target}%`;
-                }
-            }
-
-            updateCounter();
-        });
-
-        started = true;
-    }
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeIcon.className = theme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
+    localStorage.setItem(THEME_KEY, theme);
 }
 
-// Scroll Animation
-window.addEventListener('scroll', startSkillAnimation);
+function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(saved || (prefersDark ? 'dark' : 'light'));
+}
 
-// Load Animation
-window.addEventListener('load', startSkillAnimation);
+themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+});
 
+/* ==========================================================================
+   MOBILE NAVIGATION
+   ========================================================================== */
+function closeMenu() {
+    nav.classList.remove('open');
+    menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
 
+function openMenu() {
+    nav.classList.add('open');
+    menuToggle.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
 
+menuToggle.addEventListener('click', () => {
+    nav.classList.contains('open') ? closeMenu() : openMenu();
+});
 
+navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
 
-// ================= CERTIFICATE MODAL =================
+/* ==========================================================================
+   STICKY HEADER & ACTIVE NAV LINK
+   ========================================================================== */
+const sections = document.querySelectorAll('section[id]');
 
-const certificateCards = document.querySelectorAll('.certificate-card');
+function updateHeader() {
+    const scrollY = window.scrollY;
 
-const certificateModal = document.getElementById('certificateModal');
+    // Sticky header
+    header.classList.toggle('scrolled', scrollY > 50);
 
-const modalImage = document.getElementById('modalCertificateImage');
-const modalTitle = document.getElementById('modalCertificateTitle');
-const modalOrg = document.getElementById('modalCertificateOrg');
-const modalYear = document.getElementById('modalCertificateYear');
-const modalDescription = document.getElementById('modalCertificateDescription');
+    // Active nav link
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
 
-const closeCertificateModal = document.querySelector('.certificate-close-btn');
+        if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+        }
+    });
+}
 
-// ================= OPEN MODAL =================
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+/* ==========================================================================
+   SCROLL REVEAL (Intersection Observer)
+   Lightweight alternative to ScrollReveal library
+   ========================================================================== */
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+/* ==========================================================================
+   SKILLS PROGRESS ANIMATION
+   ========================================================================== */
+let skillsAnimated = false;
+
+function animateSkills() {
+    if (skillsAnimated || !skillSection) return;
+
+    const rect = skillSection.getBoundingClientRect();
+    if (rect.top > window.innerHeight - 80) return;
+
+    const skillItems = skillSection.querySelectorAll('.skill-item[data-level]');
+
+    skillItems.forEach(item => {
+        const level = parseInt(item.dataset.level, 10);
+        const fill = item.querySelector('.skill-fill');
+        const percent = item.querySelector('.skill-percent');
+
+        if (fill) fill.style.width = `${level}%`;
+
+        // Animate counter
+        if (percent) {
+            let count = 0;
+            const step = level / 40;
+
+            function tick() {
+                count += step;
+                if (count < level) {
+                    percent.textContent = `${Math.ceil(count)}%`;
+                    requestAnimationFrame(tick);
+                } else {
+                    percent.textContent = `${level}%`;
+                }
+            }
+            tick();
+        }
+    });
+
+    skillsAnimated = true;
+}
+
+window.addEventListener('scroll', animateSkills, { passive: true });
+window.addEventListener('load', animateSkills);
+
+/* ==========================================================================
+   CERTIFICATE MODAL
+   ========================================================================== */
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalOrg = document.getElementById('modalOrg');
+const modalYear = document.getElementById('modalYear');
+const modalDesc = document.getElementById('modalDesc');
+
+function openModal(card) {
+    modalImage.src = card.dataset.image;
+    modalImage.alt = card.dataset.title;
+    modalTitle.textContent = card.dataset.title;
+    modalOrg.textContent = card.dataset.org;
+    modalYear.textContent = card.dataset.year;
+    modalDesc.textContent = card.dataset.description;
+
+    certificateModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    // Focus trap — focus close button
+    certificateModal.querySelector('.modal-close').focus();
+}
+
+function closeModal() {
+    certificateModal.hidden = true;
+    document.body.style.overflow = '';
+}
 
 certificateCards.forEach(card => {
+    card.addEventListener('click', () => openModal(card));
 
-    card.addEventListener('click', () => {
-
-        const image = card.dataset.image;
-        const title = card.dataset.title;
-        const org = card.dataset.org;
-        const year = card.dataset.year;
-        const description = card.dataset.description;
-
-        modalImage.src = image;
-        modalTitle.textContent = title;
-        modalOrg.textContent = org;
-        modalYear.textContent = year;
-        modalDescription.textContent = description;
-
-        certificateModal.classList.add('active');
-
-        document.body.style.overflow = 'hidden';
-    });
-
-});
-
-// ================= CLOSE MODAL =================
-
-closeCertificateModal.addEventListener('click', () => {
-
-    certificateModal.classList.remove('active');
-
-    document.body.style.overflow = 'auto';
-
-});
-
-// ================= CLICK OUTSIDE =================
-
-certificateModal.addEventListener('click', (e) => {
-
-    if (e.target === certificateModal) {
-
-        certificateModal.classList.remove('active');
-
-        document.body.style.overflow = 'auto';
+    const btn = card.querySelector('.certificate-btn');
+    if (btn) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openModal(card);
+        });
     }
-
 });
 
-// ================= ESC KEY =================
+certificateModal.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', closeModal);
+});
 
 document.addEventListener('keydown', (e) => {
-
-    if (e.key === 'Escape') {
-
-        certificateModal.classList.remove('active');
-
-        document.body.style.overflow = 'auto';
-    }
-
+    if (e.key === 'Escape' && !certificateModal.hidden) closeModal();
 });
 
-
-/* ================= Education SECTION ================= */
-
-// Education section animations (optional)
-
-const educationCards = document.querySelectorAll('.timeline-content');
-
-educationCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.boxShadow = '0 0 25px rgba(117, 78, 249, 0.25)';
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.boxShadow = '';
-    });
-});
-
-// ================= CONTACT FORM SUCCESS =================
-
-const contactForm = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-
-if(contactForm){
-
+/* ==========================================================================
+   CONTACT FORM
+   ========================================================================== */
+if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-
         e.preventDefault();
 
-        successMessage.style.display = 'block';
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
 
+        formSuccess.hidden = false;
         contactForm.reset();
 
         setTimeout(() => {
-
-            successMessage.style.display = 'none';
-
-        }, 3000);
-
+            formSuccess.hidden = true;
+        }, 4000);
     });
-
 }
+
+/* ==========================================================================
+   SMOOTH SCROLL OFFSET FOR FIXED HEADER
+   ========================================================================== */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        const targetId = anchor.getAttribute('href');
+        if (targetId === '#') return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+        const offset = header.offsetHeight + 16;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ top, behavior: 'smooth' });
+    });
+});
+
+/* ==========================================================================
+   INIT
+   ========================================================================== */
+initTheme();
+updateHeader();
