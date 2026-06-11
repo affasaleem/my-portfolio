@@ -90,11 +90,7 @@ This portfolio is fully responsive and optimized for:
 
 # 🔗 Live Demo
 
-👉 Add your portfolio live link here:
-
-```bash
-https://affasaleem.github.io/my-portfolio/
-```
+👉 https://affasaleem.github.io/my-portfolio/
 
 ---
 

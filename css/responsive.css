@@ -49,10 +49,6 @@
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 /* --------------------------------------------------------------------------
@@ -290,8 +286,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    /* Swiper — 1 slide wide on tablet-portrait */
+    #projectsSwiper .swiper-track,
+    #certsSwiper .swiper-track {
+        gap: 0;
+    }
+    #projectsSwiper .swiper-slide,
+    #certsSwiper .swiper-slide {
+        flex: 0 0 100%;
     }
 
     .contact-grid {
@@ -394,8 +396,14 @@
         grid-template-columns: 1fr;
     }
 
-    .certificates-grid {
-        grid-template-columns: 1fr;
+    /* On mobile — swiper always 1 slide */
+    #projectsSwiper .swiper-track,
+    #certsSwiper .swiper-track {
+        gap: 0;
+    }
+    #projectsSwiper .swiper-slide,
+    #certsSwiper .swiper-slide {
+        flex: 0 0 100%;
     }
 
     .project-overlay {
@@ -801,8 +809,19 @@
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Swiper — show 2 slides at once on large desktop */
+    #projectsSwiper .swiper-track {
+        gap: 2rem;
+    }
+    #projectsSwiper .swiper-slide {
+        flex: 0 0 calc(50% - 1rem);
+    }
+
+    #certsSwiper .swiper-track {
+        gap: 2rem;
+    }
+    #certsSwiper .swiper-slide {
+        flex: 0 0 calc(50% - 1rem);
     }
 }
 

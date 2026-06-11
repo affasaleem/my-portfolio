@@ -158,6 +158,177 @@ window.addEventListener('scroll', animateSkills, { passive: true });
 window.addEventListener('load', animateSkills);
 
 /* ==========================================================================
+   CREATIVE SWIPER — Reusable vanilla slider
+   Supports: buttons, dots, touch swipe, keyboard, auto-play
+   ========================================================================== */
+function createSwiper({ trackId, prevBtnId, nextBtnId, dotsContainerId, autoPlayDelay = 4500 }) {
+    const track      = document.getElementById(trackId);
+    const prevBtn    = document.getElementById(prevBtnId);
+    const nextBtn    = document.getElementById(nextBtnId);
+    const dotsWrap   = document.getElementById(dotsContainerId);
+
+    if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    const slides     = Array.from(track.children);
+    let current      = 0;
+    let autoTimer    = null;
+    let touchStartX  = 0;
+    let touchEndX    = 0;
+    let isDragging   = false;
+
+    /* ── How many slides are visible at once? ── */
+    function getSlidesPerView() {
+        const slide = slides[0];
+        if (!slide) return 1;
+        const trackW = track.parentElement.offsetWidth;
+        const slideW = slide.offsetWidth;
+        return Math.max(1, Math.round(trackW / slideW));
+    }
+
+    /* ── Total "pages" ── */
+    function totalPages() {
+        return Math.ceil(slides.length / getSlidesPerView());
+    }
+
+    /* ── Build dot buttons ── */
+    function buildDots() {
+        dotsWrap.innerHTML = '';
+        const pages = totalPages();
+        for (let i = 0; i < pages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'swiper-dot' + (i === current ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(dot);
+        }
+    }
+
+    /* ── Update dot states ── */
+    function syncDots() {
+        const dots = dotsWrap.querySelectorAll('.swiper-dot');
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    /* ── Animate track to current page ── */
+    function goTo(index) {
+        const pages = totalPages();
+        current = Math.max(0, Math.min(index, pages - 1));
+
+        /* Calculate pixel offset using the actual slide width */
+        const slideW  = slides[0].offsetWidth;
+        const perView = getSlidesPerView();
+        const gapPx   = parseFloat(getComputedStyle(track).gap) || 0;
+        const offset  = current * perView * (slideW + gapPx);
+
+        track.style.transform = `translateX(-${offset}px)`;
+
+        /* Button states */
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current >= pages - 1;
+
+        syncDots();
+    }
+
+    /* ── Navigation ── */
+    prevBtn.addEventListener('click', () => {
+        resetAuto();
+        goTo(current - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        resetAuto();
+        goTo(current + 1);
+    });
+
+    /* ── Touch / Drag swipe ── */
+    track.parentElement.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    track.parentElement.addEventListener('touchend', e => {
+        if (!isDragging) return;
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            resetAuto();
+            goTo(diff > 0 ? current + 1 : current - 1);
+        }
+        isDragging = false;
+    }, { passive: true });
+
+    /* ── Mouse drag (desktop) ── */
+    track.parentElement.addEventListener('mousedown', e => {
+        touchStartX = e.clientX;
+        isDragging = true;
+    });
+
+    track.parentElement.addEventListener('mouseup', e => {
+        if (!isDragging) return;
+        touchEndX = e.clientX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            resetAuto();
+            goTo(diff > 0 ? current + 1 : current - 1);
+        }
+        isDragging = false;
+    });
+
+    /* ── Keyboard ── */
+    track.parentElement.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  { resetAuto(); goTo(current - 1); }
+        if (e.key === 'ArrowRight') { resetAuto(); goTo(current + 1); }
+    });
+
+    /* ── Auto-play ── */
+    function startAuto() {
+        autoTimer = setInterval(() => {
+            const pages = totalPages();
+            goTo(current >= pages - 1 ? 0 : current + 1);
+        }, autoPlayDelay);
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+    }
+
+    /* Pause on hover */
+    const outerEl = track.parentElement.parentElement;
+    outerEl.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    outerEl.addEventListener('mouseleave', startAuto);
+
+    /* ── Re-init on resize ── */
+    window.addEventListener('resize', () => {
+        buildDots();
+        goTo(Math.min(current, totalPages() - 1));
+    });
+
+    /* ── Init ── */
+    buildDots();
+    goTo(0);
+    startAuto();
+}
+
+/* Projects Swiper */
+createSwiper({
+    trackId:          'projectsTrack',
+    prevBtnId:        'projectsPrev',
+    nextBtnId:        'projectsNext',
+    dotsContainerId:  'projectsDots',
+    autoPlayDelay:    5000,
+});
+
+/* Certificates Swiper */
+createSwiper({
+    trackId:          'certsTrack',
+    prevBtnId:        'certsPrev',
+    nextBtnId:        'certsNext',
+    dotsContainerId:  'certsDots',
+    autoPlayDelay:    4000,
+});
+
+/* ==========================================================================
    CERTIFICATE MODAL
    ========================================================================== */
 const modalImage = document.getElementById('modalImage');
