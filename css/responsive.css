@@ -800,11 +800,6 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .skills-grid .skill-category:last-child,
-    .skills-grid .skill-category:nth-last-child(2) {
-        /* Soft skills & tools span nicely in 3-col */
-    }
-
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
     }
