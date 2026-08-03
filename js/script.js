@@ -79,7 +79,7 @@ function updateHeader() {
     // Sticky header
     header.classList.toggle('scrolled', scrollY > 50);
 
-    // Active nav link
+    // Active nav link (dynamically matches all sections including: home, about, skills, projects, certificates, experience, contact)
     sections.forEach(section => {
         const top = section.offsetTop - 120;
         const height = section.offsetHeight;
@@ -329,6 +329,141 @@ createSwiper({
 });
 
 /* ==========================================================================
+   EXPERIENCE FLIP CARD SWIPER
+   A completely different swiper: 3D card flip on click + slide transition
+   Controls: diamond prev/next buttons + animated progress bar
+   ========================================================================== */
+(function initExpFlipSwiper() {
+    const cards       = Array.from(document.querySelectorAll('.exp-card'));
+    const prevBtn     = document.getElementById('expPrev');
+    const nextBtn     = document.getElementById('expNext');
+    const progressBar = document.getElementById('expProgressBar');
+    const currentEl   = document.getElementById('expCurrent');
+    const totalEl     = document.getElementById('expTotal');
+    const stage       = document.getElementById('expStage');
+
+    if (!cards.length || !prevBtn || !nextBtn || !progressBar) return;
+
+    const total = cards.length;
+    let current = 0;
+    let autoTimer = null;
+
+    /* Set total display */
+    if (totalEl) totalEl.textContent = total;
+
+    /* ── Activate a card by index ── */
+    function goTo(index, direction /* 'next' | 'prev' */) {
+        const prev = current;
+        current = (index + total) % total;
+
+        if (prev === current) return;
+
+        const leavingClass  = direction === 'next' ? 'exp-leaving-left'  : 'exp-leaving-right';
+        const enteringClass = direction === 'next' ? 'exp-entering-left' : 'exp-entering-right';
+
+        /* 1. Animate outgoing card */
+        const outCard = cards[prev];
+        outCard.classList.remove('exp-active');
+        outCard.classList.remove('flipped');  /* Un-flip before hiding */
+        outCard.classList.add(leavingClass);
+
+        /* 2. Prepare incoming card off-screen */
+        const inCard = cards[current];
+        inCard.classList.remove('exp-active', 'exp-leaving-left', 'exp-leaving-right', 'flipped');
+        inCard.classList.add(enteringClass);
+
+        /* Force reflow so CSS transition fires */
+        void inCard.offsetWidth;
+
+        /* 3. Slide incoming card in */
+        requestAnimationFrame(() => {
+            inCard.classList.remove(enteringClass);
+            inCard.classList.add('exp-active');
+        });
+
+        /* 4. Cleanup outgoing card after transition */
+        setTimeout(() => { outCard.classList.remove(leavingClass); }, 700);
+
+        /* 5. Update UI */
+        updateUI();
+    }
+
+    /* ── Update counter, progress bar & buttons ── */
+    function updateUI() {
+        if (currentEl) currentEl.textContent = current + 1;
+        const pct = total <= 1 ? 100 : (current / (total - 1)) * 100;
+        progressBar.style.width = `${pct}%`;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+    }
+
+    /* ── Navigation buttons ── */
+    prevBtn.addEventListener('click', () => { resetAuto(); goTo(current - 1, 'prev'); });
+    nextBtn.addEventListener('click', () => { resetAuto(); goTo(current + 1, 'next'); });
+
+    /* ── Keyboard navigation on stage ── */
+    if (stage) {
+        stage.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') { resetAuto(); goTo(current + 1, 'next'); }
+            if (e.key === 'ArrowLeft')  { resetAuto(); goTo(current - 1, 'prev'); }
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                cards[current].classList.toggle('flipped');
+            }
+        });
+
+        /* ── Touch swipe on stage ── */
+        let touchStartX = 0;
+        stage.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        stage.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                resetAuto();
+                goTo(diff > 0 ? current + 1 : current - 1, diff > 0 ? 'next' : 'prev');
+            }
+        }, { passive: true });
+    }
+
+    /* ── Flip on card click ── */
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            if (!card.classList.contains('exp-active')) return;
+            card.classList.toggle('flipped');
+        });
+    });
+
+    /* ── Auto-advance (pauses on hover / flip) ── */
+    function startAuto() {
+        autoTimer = setInterval(() => {
+            if (!cards[current].classList.contains('flipped')) {
+                goTo(current < total - 1 ? current + 1 : 0, 'next');
+            }
+        }, 5500);
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+    }
+
+    const expSwiper = document.getElementById('expSwiper');
+    if (expSwiper) {
+        expSwiper.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        expSwiper.addEventListener('mouseleave', startAuto);
+    }
+
+    /* ── Init — show first card ── */
+    cards.forEach(card => {
+        card.classList.remove('exp-active', 'exp-leaving-left', 'exp-leaving-right', 'exp-entering-left', 'exp-entering-right');
+    });
+    cards[0].classList.add('exp-active');
+    updateUI();
+    startAuto();
+})();
+
+/* ==========================================================================
    CERTIFICATE MODAL
    ========================================================================== */
 const modalImage = document.getElementById('modalImage');
@@ -377,6 +512,30 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !certificateModal.hidden) closeModal();
 });
 
+/* ── Experience card "View Certificate" modal button ── */
+document.querySelectorAll('.exp-cert-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.exp-card');
+        if (!card) return;
+        const certSrc = btn.dataset.certSrc || '';
+        const title = card.querySelector('.exp-card-body-text h3')?.textContent || '';
+        const org = card.querySelector('.exp-card-body-text h4')?.textContent || '';
+        const year = card.querySelector('.exp-date')?.textContent || '';
+        const desc = card.querySelector('.exp-card-desc')?.textContent || '';
+
+        openModal({
+            dataset: {
+                image: certSrc,
+                title: title,
+                org: org,
+                year: year,
+                description: desc
+            }
+        });
+    });
+});
+
 /* ==========================================================================
    CONTACT FORM
    ========================================================================== */
@@ -418,7 +577,108 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* ==========================================================================
+   MINI PROBLEM SOLVING POSTS SWIPER (SQL & Java 5-Star Achievements)
+   ========================================================================== */
+function initPsMiniSwiper() {
+    const track = document.getElementById('psSwiperTrack');
+    const tabs = document.querySelectorAll('.mini-swiper-tab');
+    const prevBtn = document.getElementById('psPrevBtn');
+    const nextBtn = document.getElementById('psNextBtn');
+    const container = document.getElementById('psSwiperContainer');
+
+    if (!track || !tabs.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = tabs.length;
+    let autoPlayTimer = null;
+
+    function goToSlide(index) {
+        currentIndex = (index + totalSlides) % totalSlides;
+
+        // Slide track
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update tabs active state
+        tabs.forEach((tab, i) => {
+            const isActive = i === currentIndex;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Update arrow button states
+        if (prevBtn) prevBtn.disabled = currentIndex === 0;
+        if (nextBtn) nextBtn.disabled = currentIndex === totalSlides - 1;
+    }
+
+    // Tab click events
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const idx = parseInt(tab.dataset.index, 10);
+            resetAutoPlay();
+            goToSlide(idx);
+        });
+    });
+
+    // Arrow button events
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            resetAutoPlay();
+            goToSlide(currentIndex - 1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            resetAutoPlay();
+            goToSlide(currentIndex + 1);
+        });
+    }
+
+    // Touch / Swipe support
+    if (container) {
+        let touchStartX = 0;
+        container.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        container.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 40) {
+                resetAutoPlay();
+                if (diff > 0 && currentIndex < totalSlides - 1) {
+                    goToSlide(currentIndex + 1);
+                } else if (diff < 0 && currentIndex > 0) {
+                    goToSlide(currentIndex - 1);
+                }
+            }
+        }, { passive: true });
+
+        container.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+        container.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    function startAutoPlay() {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => {
+            goToSlide(currentIndex < totalSlides - 1 ? currentIndex + 1 : 0);
+        }, 5000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
+
+    // Init
+    goToSlide(0);
+    startAutoPlay();
+}
+
+/* ==========================================================================
    INIT
    ========================================================================== */
 initTheme();
 updateHeader();
+initPsMiniSwiper();
+

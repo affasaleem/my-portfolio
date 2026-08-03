@@ -37,6 +37,7 @@
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#experience" class="nav-link">Experience</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
@@ -194,6 +195,97 @@
                             <span>Let's Connect</span>
                             <i class="bx bx-right-arrow-alt"></i>
                         </a>
+
+                        <!-- Mini Problem Solving Posts (5-Star SQL & Java) -->
+                        <div class="about-ps-wrapper">
+                            <div class="about-ps-header">
+                                <span class="ps-header-badge">
+                                    <i class="bx bx-trophy"></i> Problem Solving
+                                </span>
+                                <!-- Custom Swiper Control Buttons -->
+                                <div class="mini-swiper-controls" id="psSwiperControls">
+                                    <div class="mini-swiper-tabs">
+                                        <button class="mini-swiper-tab active" data-index="0" type="button" aria-label="Show SQL 5 Star Badge">
+                                            <i class="bx bx-data"></i> SQL <span>5★</span>
+                                        </button>
+                                        <button class="mini-swiper-tab" data-index="1" type="button" aria-label="Show Java 5 Star Badge">
+                                            <i class="bx bxl-java"></i> Java <span>5★</span>
+                                        </button>
+                                    </div>
+                                    <div class="mini-swiper-arrows">
+                                        <button class="mini-swiper-arrow" id="psPrevBtn" type="button" aria-label="Previous achievement">
+                                            <i class="bx bx-chevron-left"></i>
+                                        </button>
+                                        <button class="mini-swiper-arrow" id="psNextBtn" type="button" aria-label="Next achievement">
+                                            <i class="bx bx-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Swiper Container & Cards -->
+                            <div class="mini-swiper-container" id="psSwiperContainer">
+                                <div class="mini-swiper-track" id="psSwiperTrack">
+                                    <!-- Slide 1: SQL 5 Star Post -->
+                                    <article class="mini-ps-card glass">
+                                        <div class="mini-ps-badge-bar">
+                                            <span class="mini-ps-platform"><i class="bx bx-code-alt"></i> HackerRank Gold</span>
+                                            <div class="mini-ps-stars" aria-label="5 Star Rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mini-ps-content">
+                                            <div class="mini-ps-icon-box sql-icon">
+                                                <i class="bx bx-data"></i>
+                                            </div>
+                                            <div class="mini-ps-text">
+                                                <h4>5-Star SQL Problem Solver</h4>
+                                                <p>Achieved 5★ Gold Badge by mastering complex database queries, multi-table JOINs, subqueries, indexing, and high-performance relational database optimization.</p>
+                                            </div>
+                                        </div>
+                                        <div class="mini-ps-tags">
+                                            <span class="mini-ps-tag">Relational DB</span>
+                                            <span class="mini-ps-tag">Complex JOINs</span>
+                                            <span class="mini-ps-tag">Window Functions</span>
+                                            <span class="mini-ps-tag">Query Optimization</span>
+                                        </div>
+                                    </article>
+
+                                    <!-- Slide 2: Java 5 Star Post -->
+                                    <article class="mini-ps-card glass">
+                                        <div class="mini-ps-badge-bar">
+                                            <span class="mini-ps-platform"><i class="bx bx-code-alt"></i> HackerRank Gold</span>
+                                            <div class="mini-ps-stars" aria-label="5 Star Rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="mini-ps-content">
+                                            <div class="mini-ps-icon-box java-icon">
+                                                <i class="bx bxl-java"></i>
+                                            </div>
+                                            <div class="mini-ps-text">
+                                                <h4>5-Star Java Problem Solver</h4>
+                                                <p>Earned 5★ Gold Badge through rigorous algorithmic problem solving, object-oriented design (OOP), data structures, and efficient memory management.</p>
+                                            </div>
+                                        </div>
+                                        <div class="mini-ps-tags">
+                                            <span class="mini-ps-tag">OOP &amp; Architecture</span>
+                                            <span class="mini-ps-tag">Data Structures</span>
+                                            <span class="mini-ps-tag">Algorithms</span>
+                                            <span class="mini-ps-tag">Exception &amp; Streams</span>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -722,6 +814,228 @@
                     </div>
                 </div><!-- /.swiper-wrapper-outer -->
 
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE ==================== -->
+        <section class="experience section" id="experience">
+            <div class="container">
+                <header class="section-header reveal" data-reveal="up">
+                    <p class="section-label">Professional Experience</p>
+                    <h2 class="section-title">My <span class="text-gradient">Experience</span></h2>
+                    <p class="section-desc">
+                        My career highlights, software developer training, and entrepreneurial ventures.
+                    </p>
+                </header>
+
+                <div class="exp-swiper-container reveal" data-reveal="up" id="expSwiper">
+                    <div class="exp-stage-outer" id="expStage" tabindex="0">
+                        <div class="exp-stage-inner">
+
+                            <!-- Card sample: Software Developer Trainee -->
+                            <article class="exp-card glass" tabindex="0">
+                                <div class="exp-card-inner">
+                                    <div class="exp-card-front">
+                                        <div class="exp-card-glow"></div>
+                                        <div class="exp-card-header">
+                                            <div class="exp-icon-wrap">
+                                                <i class="bx bx-code-alt"></i>
+                                            </div>
+                                            <span class="exp-badge">Sample</span>
+                                        </div>
+                                        <div class="exp-card-body">
+                                            <div class="exp-card-body-text">
+                                                <span class="exp-date">2023 — Present</span>
+                                                <h3>Software Developer Trainee</h3>
+                                                <h4>Mars Tech International (Pvt) Ltd</h4>
+                                                <p class="exp-card-desc">Training in full-stack web technologies, AI integrations, agile workflows, and core software engineering principles.</p>
+                                            </div>
+                                        </div>
+                                        <div class="exp-card-footer">
+                                            <button class="exp-cert-btn" type="button" aria-label="View Certificate" data-cert-src="assets/internships/Working_as_a_Software_Engineer_at_a_Start_Up.jpg">
+                                                <i class="bx bx-award"></i> View Certificate
+                                            </button>
+                                            <p class="exp-hint"><i class="bx bx-info-circle"></i> Click to view details</p>
+                                        </div>
+                                    </div>
+                                    <div class="exp-card-back">
+                                        <div class="exp-card-back-header">
+                                            <h3>Key Responsibilities</h3>
+                                            <h4>Mars Tech International</h4>
+                                        </div>
+                                        <ul class="exp-details-list">
+                                            <li>Training in full-stack web technologies &amp; AI-driven integrations.</li>
+                                            <li>Developing real-world projects and collaborating on frontend/backend systems.</li>
+                                            <li>Learning agile developer workflows, GIT version control, and code reviews.</li>
+                                        </ul>
+                                        <span class="exp-flip-back"><i class="bx bx-left-arrow-circle"></i> Click to flip back</span>
+                                    </div>
+                                </div>
+                            </article>
+ 
+                            <!-- Card 1: Walmart Global Tech - Forage -->
+                             <article class="exp-card glass" tabindex="0">
+                                <div class="exp-card-inner">
+                                    <div class="exp-card-front">
+                                        <div class="exp-card-glow"></div>
+                                        <div class="exp-card-header">
+                                            <div class="exp-icon-wrap">
+                                                <i class="bx bx-code-alt"></i>
+                                            </div>
+                                            <span class="exp-badge">Job Simulation</span>
+                                        </div>
+                                        <div class="exp-card-body">
+                                            <div class="exp-card-body-text">
+                                                <span class="exp-date">July 2026</span>
+                                                <h3>Software Engineering Virtual Experience Program</h3>
+                                                <h4>Walmart Global Tech - Forage</h4>
+                                                <p class="exp-card-desc">Completed an advanced software engineering virtual experience involving data structures, software architecture, relational database design, 
+                                                    and data munging through practical industry-inspired engineering tasks.</p>
+                                            </div>
+                                        </div>
+                                        <div class="exp-card-footer">
+                                            <button class="exp-cert-btn" type="button" aria-label="View Certificate" data-cert-src="./assets/internships/Advanced_Software_Engineering_Job.jpg">
+                                                <i class="bx bx-award"></i> View Certificate
+                                            </button>
+                                            <p class="exp-hint"><i class="bx bx-info-circle"></i> Click to view details</p>
+                                        </div>
+                                    </div>
+                                    <div class="exp-card-back">
+                                        <div class="exp-card-back-header">
+                                            <h3>Key Responsibilities</h3>
+                                            <h4>Walmart Global Tech - Forage</h4>
+                                        </div>
+                                        <ul class="exp-details-list">
+                                            <li>Designed and implemented solutions using advanced data structures and algorithms.</li>
+                                            <li>Applied software architecture principles to build scalable and maintainable system designs.</li>
+                                            <li>Created and optimized relational database schemas following normalization best practices.</li>
+                                            <li>Performed data munging and preprocessing to transform raw datasets into usable formats.</li>
+                                            <li>Analyzed engineering problems and proposed efficient technical solutions.</li>
+                                            <li>Followed structured software engineering practices to complete industry-inspired tasks.</li>
+                                        </ul>
+                                        <span class="exp-flip-back"><i class="bx bx-left-arrow-circle"></i> Click to flip back</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Card 2: Skyscanner - Forage -->
+                             <article class="exp-card glass" tabindex="0">
+                                <div class="exp-card-inner">
+                                    <div class="exp-card-front">
+                                        <div class="exp-card-glow"></div>
+                                        <div class="exp-card-header">
+                                            <div class="exp-icon-wrap">
+                                                <i class="bx bx-code-alt"></i>
+                                            </div>
+                                            <span class="exp-badge">Job Simulation</span>
+                                        </div>
+                                        <div class="exp-card-body">
+                                            <div class="exp-card-body-text">
+                                                <span class="exp-date">July 2026</span>
+                                                <h3>Front-End Software Engineering Virtual Experience Program</h3>
+                                                <h4>Skyscanner - Forage</h4>
+                                                <p class="exp-card-desc">Completed a front-end software engineering virtual experience by building 
+                                                    a React-based Backpack web application while applying modern UI development, responsive design, and component-based architecture principles.</p>
+                                            </div>
+                                        </div>
+                                        <div class="exp-card-footer">
+                                            <button class="exp-cert-btn" type="button" aria-label="View Certificate" data-cert-src="assets/internships/Working_as_a_Software_Engineer_at_a_Start_Up.jpg">
+                                                <i class="bx bx-award"></i> View Certificate
+                                            </button>
+                                            <p class="exp-hint"><i class="bx bx-info-circle"></i> Click to view details</p>
+                                        </div>
+                                    </div>
+                                    <div class="exp-card-back">
+                                        <div class="exp-card-back-header">
+                                            <h3>Key Responsibilities</h3>
+                                            <h4>Skyscanner - Forage</h4>
+                                        </div>
+                                        <ul class="exp-details-list">
+                                            <li>Developed a Backpack React web application using React.</li>
+                                            <li>Built reusable and modular UI components following component-based architecture.</li>
+                                            <li>Implemented responsive and user-friendly interface designs.</li>
+                                            <li>Structured application code for readability, maintainability, and scalability.</li>
+                                            <li>Applied front-end development best practices to complete practical engineering tasks.</li>
+                                            <li>Tested and refined application functionality to ensure a smooth user experience.</li>
+                                        </ul>
+                                        <span class="exp-flip-back"><i class="bx bx-left-arrow-circle"></i> Click to flip back</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Card 3: Skyscanner - Forage -->
+                             <article class="exp-card glass" tabindex="0">
+                                <div class="exp-card-inner">
+                                    <div class="exp-card-front">
+                                        <div class="exp-card-glow"></div>
+                                        <div class="exp-card-header">
+                                            <div class="exp-icon-wrap">
+                                                <i class="bx bx-code-alt"></i>
+                                            </div>
+                                            <span class="exp-badge">Job Simulation</span>
+                                        </div>
+                                        <div class="exp-card-body">
+                                            <div class="exp-card-body-text">
+                                                <span class="exp-date">July 2026</span>
+                                                <h3>Front-End Software Engineering Virtual Experience Program</h3>
+                                                <h4>Skyscanner - Forage</h4>
+                                                <p class="exp-card-desc">Completed a front-end software engineering virtual experience by building 
+                                                    a React-based Backpack web application while applying modern UI development, responsive design, and component-based architecture principles.</p>
+                                            </div>
+                                        </div>
+                                        <div class="exp-card-footer">
+                                            <button class="exp-cert-btn" type="button" aria-label="View Certificate" data-cert-src="assets/internships/Working_as_a_Software_Engineer_at_a_Start_Up.jpg">
+                                                <i class="bx bx-award"></i> View Certificate
+                                            </button>
+                                            <p class="exp-hint"><i class="bx bx-info-circle"></i> Click to view details</p>
+                                        </div>
+                                    </div>
+                                    <div class="exp-card-back">
+                                        <div class="exp-card-back-header">
+                                            <h3>Key Responsibilities</h3>
+                                            <h4>Skyscanner - Forage</h4>
+                                        </div>
+                                        <ul class="exp-details-list">
+                                            <li>Developed a Backpack React web application using React.</li>
+                                            <li>Built reusable and modular UI components following component-based architecture.</li>
+                                            <li>Implemented responsive and user-friendly interface designs.</li>
+                                            <li>Structured application code for readability, maintainability, and scalability.</li>
+                                            <li>Applied front-end development best practices to complete practical engineering tasks.</li>
+                                            <li>Tested and refined application functionality to ensure a smooth user experience.</li>
+                                        </ul>
+                                        <span class="exp-flip-back"><i class="bx bx-left-arrow-circle"></i> Click to flip back</span>
+                                    </div>
+                                </div>
+                            </article>
+ 
+                            
+
+                        </div>
+                    </div>
+
+                    <!-- Swiper Controls & Progress -->
+                    <div class="exp-controls-wrapper">
+                        <div class="exp-progress-container">
+                            <div class="exp-progress-bar" id="expProgressBar"></div>
+                        </div>
+                        
+                        <div class="exp-navigation">
+                            <button class="swiper-btn" id="expPrev" aria-label="Previous experience">
+                                <i class="bx bx-chevron-left"></i>
+                            </button>
+                            
+                            <div class="exp-counter">
+                                <span class="exp-current" id="expCurrent">1</span>
+                                <span class="exp-divider">/</span>
+                                <span class="exp-total" id="expTotal">3</span>
+                            </div>
+
+                            <button class="swiper-btn" id="expNext" aria-label="Next experience">
+                                <i class="bx bx-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

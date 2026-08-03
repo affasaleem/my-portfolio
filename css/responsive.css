@@ -113,6 +113,10 @@
         display: inline-flex;
     }
 
+    .about-ps-wrapper {
+        margin-inline: 0;
+    }
+
     .about-visual {
         flex-shrink: 0;
         max-width: 340px;
@@ -122,6 +126,8 @@
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Experience — timeline layout inherited from style.css */
 
     /* Contact — two column */
     .contact-grid {
@@ -860,5 +866,195 @@
 
     .section {
         padding-block: clamp(3rem, 6vw, 5rem);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   EXPERIENCE FLIP SWIPER — Responsive Adjustments
+   -------------------------------------------------------------------------- */
+
+/* Tablet & smaller — adjust heights and paddings */
+@media (max-width: 768px) {
+    .exp-stage-outer {
+        height: 380px;
+    }
+
+    .exp-card-front {
+        padding: 1.5rem;
+    }
+
+    .exp-card-back {
+        padding: 1.75rem;
+    }
+
+    .exp-card-front .exp-icon-wrap {
+        width: 44px;
+        height: 44px;
+        font-size: 1.35rem;
+    }
+
+    .exp-card-front .exp-badge {
+        padding: 0.35rem 0.85rem;
+        font-size: 0.68rem;
+    }
+
+    .exp-card-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .exp-card-body h4 {
+        font-size: 0.9rem;
+    }
+
+    .exp-card-desc {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .exp-cert-btn {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.75rem;
+    }
+
+    .exp-details-list {
+        gap: 0.6rem;
+    }
+
+    .exp-details-list li {
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .exp-stage-outer {
+        height: 370px;
+    }
+
+    .exp-card-front {
+        padding: 1.25rem;
+    }
+
+    .exp-card-back {
+        padding: 1.25rem;
+    }
+
+    .exp-card-front .exp-icon-wrap {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .exp-card-front .exp-badge {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.65rem;
+    }
+
+    .exp-card-body h3 {
+        font-size: 1.1rem;
+    }
+
+    .exp-card-body h4 {
+        font-size: 0.85rem;
+    }
+
+    .exp-card-desc {
+        font-size: 0.8rem;
+        line-height: 1.45;
+        margin-top: 0.3rem;
+    }
+
+    .exp-card-footer {
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+    }
+
+    .exp-cert-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.72rem;
+        gap: 0.35rem;
+    }
+
+    .exp-hint,
+    .exp-flip-back {
+        font-size: 0.7rem;
+    }
+
+    .exp-details-list {
+        gap: 0.5rem;
+    }
+
+    .exp-details-list li {
+        font-size: 0.8125rem;
+        padding-left: 1rem;
+    }
+
+    .exp-card.exp-leaving-left {
+        transform: translate3d(-80px, 0, -80px) rotateY(-10deg);
+    }
+    .exp-card.exp-entering-left {
+        transform: translate3d(80px, 0, -80px) rotateY(10deg);
+    }
+    .exp-card.exp-leaving-right {
+        transform: translate3d(80px, 0, -80px) rotateY(10deg);
+    }
+    .exp-card.exp-entering-right {
+        transform: translate3d(-80px, 0, -80px) rotateY(-10deg);
+    }
+}
+
+/* Small mobile */
+@media (max-width: 375px) {
+    .exp-stage-outer {
+        height: 360px;
+    }
+
+    .exp-card-front {
+        padding: 1rem;
+    }
+
+    .exp-card-back {
+        padding: 1rem;
+    }
+
+    .exp-card-front .exp-icon-wrap {
+        width: 36px;
+        height: 36px;
+        font-size: 1.15rem;
+        border-radius: 8px;
+    }
+
+    .exp-card-front .exp-badge {
+        padding: 0.25rem 0.7rem;
+        font-size: 0.6rem;
+    }
+
+    .exp-card-body h3 {
+        font-size: 1.05rem;
+    }
+
+    .exp-card-body h4 {
+        font-size: 0.8rem;
+    }
+
+    .exp-card-desc {
+        font-size: 0.76rem;
+        line-height: 1.4;
+    }
+
+    .exp-cert-btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.68rem;
+        gap: 0.3rem;
+    }
+
+    .exp-hint,
+    .exp-flip-back {
+        font-size: 0.65rem;
+    }
+    
+    .exp-details-list li {
+        font-size: 0.775rem;
     }
 }
