@@ -611,12 +611,14 @@
     .about-ps-wrapper {
         margin-top: 1.25rem;
         margin-inline: auto;
+        max-width: 380px;
     }
 
     .about-ps-header {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        
     }
 
     .ps-header-badge {
@@ -635,6 +637,26 @@
     .mini-ps-stars {
         font-size: 0.8rem;
     }
+
+    /* .mini-ps-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    } */
+
+    .mini-ps-text h4 {
+        text-align: left;
+    }
+
+    
+    /* .mini-ps-text {
+        align-items: center;
+    } */
+
+    /* .mini-ps-text p {
+        align-items: center;
+    } */
+
     .hero-visual {
         max-width: 260px;
     }
@@ -1098,7 +1120,7 @@
 /* Mobile */
 @media (max-width: 480px) {
     .exp-stage-outer {
-        height: 370px;
+        height: 320px;
     }
 
     .exp-card-front {
@@ -1144,6 +1166,7 @@
         padding: 0.4rem 0.8rem;
         font-size: 0.72rem;
         gap: 0.35rem;
+        margin-bottom: -1.5rem;
     }
 
     .exp-hint,
