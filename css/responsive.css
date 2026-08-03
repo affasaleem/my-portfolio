@@ -280,6 +280,11 @@
         margin-inline: auto;
     }
 
+    .about-ps-wrapper {
+        margin-inline: auto;
+        max-width: 520px;
+    }
+
     .about-visual {
         max-width: 360px;
     }
@@ -397,6 +402,18 @@
     .about-content p {
         width: 80%;
         margin-inline: auto;
+    }
+
+    .about-ps-wrapper {
+        margin-inline: auto;
+        max-width: 100%;
+        margin-top: 1.75rem;
+    }
+
+    .about-ps-header {
+        flex-wrap: wrap;
+        gap: 0.625rem;
+        justify-content: space-between;
     }
     .services-grid {
         grid-template-columns: 1fr;
@@ -531,16 +548,15 @@
         left: -22%;
     }
 
-    .hero-float-card:nth-child(4) {
-        bottom: 35%;
-        left: -20%;
+    .mini-ps-tags {
+        gap: 0.35rem;
+        justify-content: center;
     }
 
-    .hero-float-card:nth-child(5) {
-        bottom: 20%;
-        right: -22%;
+    .mini-ps-tag {
+        font-size: 0.68rem;
+        padding: 0.15rem 0.45rem;
     }
-    
 }
 
 /* --------------------------------------------------------------------------
