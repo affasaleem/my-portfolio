@@ -875,6 +875,7 @@ ul {
 
 .about-content .btn {
     display: flex;
+    width: fit-content;
     margin-inline: auto;
 }
 
