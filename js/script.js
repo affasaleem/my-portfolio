@@ -581,15 +581,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    ========================================================================== */
 function initPsMiniSwiper() {
     const track = document.getElementById('psSwiperTrack');
-    const tabs = document.querySelectorAll('.mini-swiper-tab');
     const prevBtn = document.getElementById('psPrevBtn');
     const nextBtn = document.getElementById('psNextBtn');
     const container = document.getElementById('psSwiperContainer');
 
-    if (!track || !tabs.length) return;
+    if (!track || !track.children.length) return;
 
     let currentIndex = 0;
-    const totalSlides = tabs.length;
+    const totalSlides = track.children.length;
     let autoPlayTimer = null;
 
     function goToSlide(index) {
@@ -598,26 +597,10 @@ function initPsMiniSwiper() {
         // Slide track
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Update tabs active state
-        tabs.forEach((tab, i) => {
-            const isActive = i === currentIndex;
-            tab.classList.toggle('active', isActive);
-            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        });
-
         // Update arrow button states
         if (prevBtn) prevBtn.disabled = currentIndex === 0;
         if (nextBtn) nextBtn.disabled = currentIndex === totalSlides - 1;
     }
-
-    // Tab click events
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const idx = parseInt(tab.dataset.index, 10);
-            resetAutoPlay();
-            goToSlide(idx);
-        });
-    });
 
     // Arrow button events
     if (prevBtn) {
